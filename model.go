@@ -513,3 +513,10 @@ type ForwardingInfo struct {
 	BytesSent     int
 	BytesReceived int
 }
+
+type ChatMessage struct {
+	ID       int    `json:"i" xml:"i"`
+	UserName string `json:"u" xml:"u"`
+	Date     string `json:"d" xml:"d"`
+	Message  string `json:"m" xml:"m"`
+}
