@@ -507,3 +507,9 @@ type PassingPosition struct {
 	Altitude  int
 	Flag      string
 }
+
+// ForwardingInfo contains statistics about the backup/forwarding
+type ForwardingInfo struct {
+	BytesSent     int
+	BytesReceived int
+}
