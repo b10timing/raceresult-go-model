@@ -395,10 +395,11 @@ type TeamScore struct {
 
 // Time describes the internal go model
 type Time struct {
-	Decimal  decimal.Decimal
-	InfoText string
-	IDResult int
-	IDBib    int
+	Bib         int
+	Result      int
+	DecimalTime decimal.Decimal
+	TimeText    string
+	InfoText    string
 }
 
 // TimingPointRule describes the internal go model
