@@ -527,3 +527,10 @@ type ChatMessage struct {
 	Date     string `json:"d" xml:"d"`
 	Message  string `json:"m" xml:"m"`
 }
+
+type Version struct {
+	Major    int    `json:"major"`
+	Minor    int    `json:"minor"`
+	Revision int    `json:"revision"`
+	Hash     string `json:"hash"`
+}
