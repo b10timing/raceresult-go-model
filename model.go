@@ -301,6 +301,12 @@ type RawDataRule struct {
 	RefOffset decimal.Decimal
 }
 
+type RawDataDistinctValues struct {
+	DecoderID      []string
+	OrderID        []int
+	BatteryVoltage []int
+}
+
 // Result describes the internal go model
 type Result struct {
 	ID           int
