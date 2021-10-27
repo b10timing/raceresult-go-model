@@ -454,6 +454,11 @@ type Setting struct {
 	RandomVersionID int
 }
 
+type UserDefinedField struct {
+	Name       string
+	Expression string
+}
+
 type VoucherType byte
 
 const (
