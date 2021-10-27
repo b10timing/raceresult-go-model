@@ -577,3 +577,8 @@ type ImportResult struct {
 	Added   int
 	Updated int
 }
+
+type UserRight struct {
+	UserID int
+	Rights string
+}
