@@ -572,3 +572,8 @@ type EntryFeeItem struct {
 	Field string
 	Tax   decimal.Decimal
 }
+
+type ImportResult struct {
+	Added   int
+	Updated int
+}
