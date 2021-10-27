@@ -3,6 +3,8 @@ package sesbase
 import (
 	"time"
 
+	"github.com/raceresult/go-model/variant"
+
 	"github.com/raceresult/go-model/decimal"
 	"github.com/raceresult/go-model/vbdate"
 )
@@ -555,3 +557,9 @@ const (
 	TriggerModJobIDSimple   TriggerType = 8
 	TriggerSettingValue     TriggerType = 9
 )
+
+type SaveValueArrayItem struct {
+	Bib       int
+	FieldName string
+	Value     variant.Variant
+}
