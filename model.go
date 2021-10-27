@@ -592,3 +592,13 @@ type UserInfo struct {
 	UserID   int    `json:"userid"`
 	UserName string `json:"username"`
 }
+
+type TimesAddResponseItem struct {
+	Status      int
+	Time        decimal.Decimal
+	ResultID    int
+	ResultName  string
+	RawDataID   int
+	TimingPoint string
+	Fields      map[string]variant.Variant
+}
