@@ -582,3 +582,8 @@ type UserRight struct {
 	UserID int
 	Rights string
 }
+
+type UserInfo struct {
+	UserID   int    `json:"userid"`
+	UserName string `json:"username"`
+}
