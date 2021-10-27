@@ -563,3 +563,12 @@ type SaveValueArrayItem struct {
 	FieldName string
 	Value     variant.Variant
 }
+
+// EntryFeeItem is an entry fee item which is charged to a participant
+type EntryFeeItem struct {
+	ID    int
+	Name  string
+	Fee   decimal.Decimal
+	Field string
+	Tax   decimal.Decimal
+}
