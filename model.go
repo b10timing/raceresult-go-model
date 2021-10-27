@@ -539,3 +539,19 @@ type ChipFileEntry struct {
 	Transponder    string
 	Identification string
 }
+
+// TriggerType defines the type of a trigger
+type TriggerType int
+
+// TriggerType constants
+const (
+	TriggerNewTime          TriggerType = 0
+	TriggerNewParticipant   TriggerType = 1
+	TriggerNewChatMessage   TriggerType = 3
+	TriggerNewRawData       TriggerType = 4
+	TriggerExporter         TriggerType = 5
+	TriggerNewRawDataSimple TriggerType = 6
+	TriggerNewSplit         TriggerType = 7
+	TriggerModJobIDSimple   TriggerType = 8
+	TriggerSettingValue     TriggerType = 9
+)
