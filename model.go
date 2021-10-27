@@ -534,3 +534,8 @@ type Version struct {
 	Revision int    `json:"revision"`
 	Hash     string `json:"hash"`
 }
+
+type ChipFileEntry struct {
+	Transponder    string
+	Identification string
+}
