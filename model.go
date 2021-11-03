@@ -3,9 +3,8 @@ package sesbase
 import (
 	"time"
 
-	"github.com/raceresult/go-model/variant"
-
 	"github.com/raceresult/go-model/decimal"
+	"github.com/raceresult/go-model/variant"
 	"github.com/raceresult/go-model/vbdate"
 )
 
@@ -601,4 +600,12 @@ type TimesAddResponseItem struct {
 	RawDataID   int
 	TimingPoint string
 	Fields      map[string]variant.Variant
+}
+
+// SimpleAPIItem represents one entry in the SimpleAPI table
+type SimpleAPIItem struct {
+	Disabled bool
+	Key      string
+	URL      string
+	Label    string
 }
