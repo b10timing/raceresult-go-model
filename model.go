@@ -621,12 +621,14 @@ const (
 )
 
 type WebHook struct {
-	ID     int
-	Name   string
-	Type   WebHookType
-	URL    string
-	Fields []string
-	Filter string
+	ID       int
+	Disabled bool
+	Name     string
+	Type     WebHookType
+	URL      string
+	Fields   []string
+	Filter   string
+	OrderPos int
 }
 
 type WebHookMessage struct {
