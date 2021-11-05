@@ -609,3 +609,28 @@ type SimpleAPIItem struct {
 	URL      string
 	Label    string
 }
+
+type WebHookType int
+
+const (
+	WebHookTypeParticipantNew = iota
+	WebHookTypeParticipantUpdated
+	WebHookTypeRawDataNew
+	WebHookTypeModJobID
+	WebHookTypeModJobIDSettings
+)
+
+type WebHook struct {
+	ID     int
+	Name   string
+	Type   WebHookType
+	URL    string
+	Fields []string
+}
+
+type WebHookMessage struct {
+	EventID   string
+	WebHookID int
+	TimeStamp time.Time
+	Values    map[string]variant.Variant
+}
