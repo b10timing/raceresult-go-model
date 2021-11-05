@@ -626,6 +626,7 @@ type WebHook struct {
 	Type   WebHookType
 	URL    string
 	Fields []string
+	Filter string
 }
 
 type WebHookMessage struct {
