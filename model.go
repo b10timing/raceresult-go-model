@@ -209,6 +209,7 @@ type Exporter struct {
 	Name               string
 	Filter             string
 	TriggerTimingPoint string
+	TriggerSplit       string
 	TriggerResultID    int
 	DestinationType    string
 	Destination        string
