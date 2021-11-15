@@ -7,6 +7,7 @@ type EmailTemplate struct {
 	SenderName                 string
 	CC                         string
 	BCC                        string
+	ReceiverField              string
 	HTML                       bool
 	Subject                    string
 	Text                       string
