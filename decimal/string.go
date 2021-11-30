@@ -78,3 +78,23 @@ func (s Decimal) ToString() string {
 		return p + strconv.Itoa(int(seconds)) + "." + strings.TrimRight(strconv.Itoa(decs), "0")
 	}
 }
+
+// Format formats the number with the given number of decimals
+func (x Decimal) Format(decimals int, sep string) string {
+	var neg bool
+	if x < 0 {
+		neg = true
+		x = -x
+	}
+
+	s := strconv.Itoa(int(x))
+	l := len(strconv.Itoa(Decimals))
+	for len(s) < l {
+		s = "0" + s
+	}
+	s = s[:len(s)-4] + sep + s[len(s)-4:len(s)-4+decimals]
+	if neg {
+		return "-" + s
+	}
+	return s
+}
