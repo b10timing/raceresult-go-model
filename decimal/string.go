@@ -80,19 +80,34 @@ func (s Decimal) ToString() string {
 }
 
 // Format formats the number with the given number of decimals
-func (x Decimal) Format(decimals int, sep string) string {
+func (x Decimal) Format(decimals int, deciSep, thousandsSep string) string {
 	var neg bool
 	if x < 0 {
 		neg = true
 		x = -x
 	}
 
+	// convert to string and fill zeros
 	s := strconv.Itoa(int(x))
 	l := len(strconv.Itoa(Decimals))
 	for len(s) < l {
 		s = "0" + s
 	}
-	s = s[:len(s)-4] + sep + s[len(s)-4:len(s)-4+decimals]
+
+	// integer part
+	k := s[:len(s)-4]
+	if thousandsSep != "" {
+		for i := len(k) - 3; i > 0; i -= 3 {
+			k = k[:i] + thousandsSep + k[i:]
+		}
+	}
+
+	// decimal part
+	m := s[len(s)-4 : len(s)-4+decimals]
+
+	// compile
+	s = k + deciSep + m
+
 	if neg {
 		return "-" + s
 	}
