@@ -43,10 +43,11 @@ type DisplayField struct {
 }
 
 type EditField struct {
-	Label     string
-	Field     string
-	Special   string
-	Mandatory bool
+	Label          string
+	Field          string
+	Special        string
+	Mandatory      bool
+	ValidationRule string
 }
 
 type SearchField struct {
