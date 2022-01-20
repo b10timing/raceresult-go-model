@@ -10,6 +10,7 @@ type Kiosk struct {
 	EnabledFrom     vbdate.VBDate
 	EnabledTo       vbdate.VBDate
 	TransponderMode int
+	AutoFinish      bool
 	CSS             string
 	Title           string
 	Steps           []Step
