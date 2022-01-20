@@ -48,6 +48,7 @@ type EditField struct {
 	Special        string
 	Mandatory      bool
 	ValidationRule string
+	ValidationMsg  string
 }
 
 type SearchField struct {
