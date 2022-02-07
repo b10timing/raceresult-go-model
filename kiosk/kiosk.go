@@ -23,6 +23,7 @@ type Step struct {
 
 	Title         string
 	Text          string
+	OnlyShowIf    string
 	SearchFields  []SearchField
 	DisplayFields []DisplayField
 	EditFields    []EditField
