@@ -16,3 +16,8 @@ func (s *Decimal) UnmarshalXML(d *xml.Decoder, start xml.StartElement) error {
 	*s = x
 	return nil
 }
+
+// MarshalXML marshall the value into an xml tag
+func (s *Decimal) MarshalXML(e *xml.Encoder, start xml.StartElement) error {
+	return e.EncodeElement(s.ToString(), start)
+}
