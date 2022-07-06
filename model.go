@@ -586,6 +586,7 @@ type ImportResult struct {
 type UserRight struct {
 	UserID   int
 	UserName string
+	UserPic  string
 	Rights   string
 }
 
