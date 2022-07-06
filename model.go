@@ -584,13 +584,9 @@ type ImportResult struct {
 }
 
 type UserRight struct {
-	UserID int
-	Rights string
-}
-
-type UserInfo struct {
-	UserID   int    `json:"userid"`
-	UserName string `json:"username"`
+	UserID   int
+	UserName string
+	Rights   string
 }
 
 type TimesAddResponseItem struct {
