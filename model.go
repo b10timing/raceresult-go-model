@@ -583,6 +583,12 @@ type ImportResult struct {
 	Updated int
 }
 
+type UserInfo struct {
+	CustNo   int
+	UserName string
+	UserPic  string
+}
+
 type UserRight struct {
 	UserID   int
 	UserName string
