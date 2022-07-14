@@ -135,6 +135,22 @@ func (s Decimal) Round(numberOfDecimals int) Decimal {
 	return c
 }
 
+// RoundUp returns the Decimal rounded up
+func (s Decimal) RoundUp(numberOfDecimals int) Decimal {
+	if s < 0 {
+		if s == Max { // endless loop without this check
+			return s
+		}
+		return -((-s).RoundUp(numberOfDecimals))
+	}
+
+	d := Decimal(Decimals)
+	for i := 0; i < numberOfDecimals; i++ {
+		d /= 10
+	}
+	return s + (d-(s%d))%d
+}
+
 // Mult multiplies the Decimal with another Decimal
 func (s Decimal) Mult(d Decimal) Decimal {
 	return s * d / Decimals
