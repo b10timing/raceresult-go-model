@@ -29,6 +29,7 @@ type Certificate struct {
 	PrintMode          string
 	Reverse            bool
 	RoundedCorners     bool
+	PlotterMarks       bool
 	Overprint          bool
 	BlockSize          int
 	Elements           []Element `json:"Fields" xml:"Element"`
