@@ -34,3 +34,14 @@ type Certificate struct {
 	BlockSize          int
 	Elements           []Element `json:"Fields" xml:"Element"`
 }
+
+// PageCount returns the number of pages the certificate has (max of Page attribute of all elements)
+func (q Certificate) PageCount() int {
+	c := 1
+	for _, item := range q.Elements {
+		if c < item.Page {
+			c = item.Page
+		}
+	}
+	return c
+}
