@@ -4,6 +4,8 @@ import (
 	"encoding/json"
 	"encoding/xml"
 	"strings"
+
+	"github.com/raceresult/go-model/decimal"
 )
 
 // PageSize defines the page size of the certificate
@@ -89,4 +91,52 @@ func (q PageSize) MarshalJSON() ([]byte, error) {
 		s = "UserDefined"
 	}
 	return json.Marshal(s)
+}
+
+// Height returns the height in mm
+func (q PageSize) Height() decimal.Decimal {
+	switch q {
+	case PSA1:
+		return decimal.FromInt(841)
+	case PSA2:
+		return decimal.FromInt(594)
+	case PSA3:
+		return decimal.FromInt(420)
+	case PSA4:
+		return decimal.FromInt(297)
+	case PSA5:
+		return decimal.FromInt(210)
+	case PSA6:
+		return decimal.FromInt(148)
+	case PSLetter:
+		return decimal.FromFloat(11 * 25.4)
+	case PSLegal:
+		return decimal.FromFloat(14 * 25.4)
+	default:
+		return 0
+	}
+}
+
+// Width returns the width in mm
+func (q PageSize) Width() decimal.Decimal {
+	switch q {
+	case PSA1:
+		return decimal.FromInt(594)
+	case PSA2:
+		return decimal.FromInt(420)
+	case PSA3:
+		return decimal.FromInt(297)
+	case PSA4:
+		return decimal.FromInt(210)
+	case PSA5:
+		return decimal.FromInt(148)
+	case PSA6:
+		return decimal.FromInt(105)
+	case PSLetter:
+		return decimal.FromFloat(8.5 * 25.4)
+	case PSLegal:
+		return decimal.FromFloat(8.5 * 25.4)
+	default:
+		return 0
+	}
 }
