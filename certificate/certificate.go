@@ -103,16 +103,16 @@ func (q Certificate) GetHoles() [][2]decimal.Decimal {
 		add(w-cr-decimal.FromInt(9), ct+decimal.FromInt(9))
 	case 3, 4:
 		//  Lower chip
-		add(cl+decimal.FromInt(30), h-cb-decimal.FromInt(9.5))
+		add(cl+decimal.FromInt(30), h-cb-decimal.FromFloat(9.5))
 		add(cl+decimal.FromInt(30), h-cb-decimal.FromInt(22))
-		add(w-cr-decimal.FromInt(30), h-cb-decimal.FromInt(9.5))
+		add(w-cr-decimal.FromInt(30), h-cb-decimal.FromFloat(9.5))
 		add(w-cr-decimal.FromInt(30), h-cb-decimal.FromInt(22))
 
 		//  upper chip
 		if q.Holes == 3 { // duo
-			add(cl+decimal.FromInt(30), h-cb-decimal.FromInt(41.5))
+			add(cl+decimal.FromInt(30), h-cb-decimal.FromFloat(41.5))
 			add(cl+decimal.FromInt(30), h-cb-decimal.FromInt(54))
-			add(w-cr-decimal.FromInt(30), h-cb-decimal.FromInt(41.5))
+			add(w-cr-decimal.FromInt(30), h-cb-decimal.FromFloat(41.5))
 			add(w-cr-decimal.FromInt(30), h-cb-decimal.FromInt(54))
 		}
 	}
