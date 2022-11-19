@@ -42,7 +42,7 @@ const (
 
 // Element represents one element of a certificate
 type Element struct {
-	XMLName         xml.Name `xml:"Element"`
+	XMLName         xml.Name ` json:"-"xml:"Element"`
 	Type            ElementType
 	Data            string
 	Left            decimal.Decimal
@@ -68,4 +68,5 @@ type Element struct {
 	TextCharSpacing decimal.Decimal
 	OutlineWidth    decimal.Decimal
 	OutlineColor    string
+	Transparency    decimal.Decimal
 }
