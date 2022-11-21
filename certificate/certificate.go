@@ -38,6 +38,7 @@ type Certificate struct {
 	RoundedCorners     bool
 	PlotterMarks       bool
 	BlockSize          int
+	Version            int
 	Elements           []Element `json:"Fields" xml:"Element"`
 }
 
