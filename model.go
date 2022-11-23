@@ -641,3 +641,21 @@ type WebHookMessage struct {
 	TimeStamp time.Time
 	Values    map[string]variant.Variant
 }
+
+type ContestStatisticsResult struct {
+	ID        int
+	Male      int
+	Female    int
+	IsFormula bool `json:"isFormula"`
+}
+type ContestStatistics struct {
+	ID       int
+	Name     string
+	Male     int
+	Female   int
+	Adults   int
+	Children int
+	MeanAge  float64
+	Finished int
+	Results  []ContestStatisticsResult
+}
