@@ -20,6 +20,7 @@ const (
 	CETRect              ElementType = 6
 	CETLine              ElementType = 7
 	CETCircle            ElementType = 8
+	CETChunkBox          ElementType = 9
 	CETChipBarcode       ElementType = 11
 	CETBibPosition       ElementType = 12
 
