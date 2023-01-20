@@ -659,3 +659,15 @@ type ContestStatistics struct {
 	Finished int
 	Results  []ContestStatisticsResult
 }
+
+type GroupTimes struct {
+	Mode      string
+	WaveField string
+	Items     []GroupTime
+}
+
+type GroupTime struct {
+	ID   variant.Variant
+	Time decimal.Decimal
+	Item interface{} `json:",omitempty"`
+}
