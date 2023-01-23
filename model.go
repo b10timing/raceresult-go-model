@@ -667,7 +667,7 @@ type GroupTimes struct {
 }
 
 type GroupTime struct {
-	ID   variant.Variant
+	ID   interface{}
 	Time decimal.Decimal
 	Item interface{} `json:",omitempty"`
 }
