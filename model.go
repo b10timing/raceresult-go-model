@@ -667,7 +667,8 @@ type GroupTimes struct {
 }
 
 type GroupTime struct {
-	ID   interface{}
-	Time decimal.Decimal
-	Item interface{} `json:",omitempty"`
+	ID    interface{}
+	Time  decimal.Decimal
+	Item  interface{} `json:",omitempty"`
+	Count int
 }
