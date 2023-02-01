@@ -151,7 +151,6 @@ type Participant struct {
 	Uploaded          vbdate.VBDate
 	ForeignID         int
 	RecordPayGUID     string
-	RecordChanges     int
 	ActivationEventID string
 	ID                int
 	OPID              int
