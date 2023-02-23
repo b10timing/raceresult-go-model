@@ -12,7 +12,6 @@ type Presenter struct {
 	Enabled     bool
 	EnabledFrom vbdate.VBDate
 	EnabledTo   vbdate.VBDate
-	CSS         string
 	SwitchMode  string
 	Screens     []Screen
 }
@@ -39,10 +38,5 @@ type Window struct {
 	ScrollMode    string
 	PageTime      int
 	FontSize      int
-}
-
-// Result contains the all information to show a presenter screen
-type Result struct {
-	Presenter Presenter
-	Windows   []interface{}
+	ScrollBar     int
 }
