@@ -39,4 +39,5 @@ type Window struct {
 	PageTime      int
 	FontSize      int
 	ScrollBar     int
+	Filter        string
 }
