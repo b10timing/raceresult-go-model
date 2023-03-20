@@ -51,7 +51,7 @@ type Field struct {
 	Name            string // field name
 	ControlType     string // checkbox, text field, dropdown, option set, propose boxy
 	Mandatory       bool
-	DefaultValue    string
+	DefaultValue    variant.Variant
 	Placeholder     string
 	Unique          string
 	Values          []Value // dropdown: if empty: use default values (contest, ATF), otherwise use these values

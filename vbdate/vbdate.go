@@ -172,6 +172,9 @@ func (s VBDate) Nanosecond() int {
 
 // WithTimezone returns a new VBDate where the timezone was replaced
 func (s VBDate) WithTimezone(tz *time.Location) VBDate {
+	if s.IsZero() {
+		return s
+	}
 	return VBDate(time.Date(s.Year(), s.Month(), s.Day(), s.Hour(), s.Minute(), s.Second(), s.Nanosecond(), tz))
 }
 
