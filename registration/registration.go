@@ -56,6 +56,7 @@ type Field struct {
 	Unique          string
 	Values          []Value // dropdown: if empty: use default values (contest, ATF), otherwise use these values
 	ShowOnCheckPage int
+	ForceUpdate     bool
 }
 
 type Value struct {
