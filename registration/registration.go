@@ -71,6 +71,7 @@ type Value struct {
 }
 
 type Confirmation struct {
+	Label      string
 	Expression string
 }
 
