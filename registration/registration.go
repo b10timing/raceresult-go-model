@@ -42,6 +42,7 @@ type Element struct {
 	ShowIf          string
 	Color           string
 	BackgroundColor string
+	ClassName       string
 	Common          int // common in group reg
 	ValidationRules []ValidationRule
 	Children        []Element
