@@ -8,10 +8,10 @@ import (
 type Registration struct {
 	Name                                       string
 	Key                                        string
+	Title                                      string
 	Enabled                                    bool
 	EnabledFrom                                vbdate.VBDate
 	EnabledTo                                  vbdate.VBDate
-	Type                                       string // single, group, group_table
 	GroupMin, GroupMax, GroupDefault, GroupInc int
 	Steps                                      []Step
 	CheckSex                                   bool
