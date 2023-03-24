@@ -24,8 +24,7 @@ type Registration struct {
 }
 
 type Step struct {
-	Name        string
-	Label       string
+	Title       string
 	Enabled     bool
 	EnabledFrom vbdate.VBDate
 	EnabledTo   vbdate.VBDate
