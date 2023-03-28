@@ -70,7 +70,7 @@ type Value struct {
 }
 
 type Confirmation struct {
-	Label      string
+	Title      string
 	Expression string
 }
 

@@ -40,4 +40,5 @@ type Window struct {
 	FontSize      int
 	ScrollBar     int
 	Filter        string
+	ShowFilter    bool
 }
