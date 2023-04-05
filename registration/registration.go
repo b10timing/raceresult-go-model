@@ -1,7 +1,6 @@
 package registration
 
 import (
-	"github.com/raceresult/go-model/variant"
 	"github.com/raceresult/go-model/vbdate"
 )
 
@@ -51,7 +50,7 @@ type Field struct {
 	Name            string // field name
 	ControlType     string // checkbox, text field, dropdown, option set, propose boxy
 	Mandatory       bool
-	DefaultValue    variant.Variant
+	DefaultValue    string
 	Placeholder     string
 	Unique          string
 	Values          []Value // dropdown: if empty: use default values (contest, ATF), otherwise use these values
@@ -60,7 +59,7 @@ type Field struct {
 }
 
 type Value struct {
-	Value       variant.Variant
+	Value       string
 	Label       string
 	Enabled     bool
 	EnabledFrom vbdate.VBDate
