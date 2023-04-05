@@ -49,7 +49,7 @@ type Element struct {
 type Field struct {
 	Name            string // field name
 	ControlType     string // checkbox, text field, dropdown, option set, propose boxy
-	Mandatory       bool
+	Mandatory       int
 	DefaultValue    interface{}
 	Placeholder     string
 	Unique          string
