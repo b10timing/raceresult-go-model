@@ -50,6 +50,7 @@ type EditField struct {
 	Mandatory      bool
 	ValidationRule string
 	ValidationMsg  string
+	EventTools     string
 }
 
 type SearchField struct {
