@@ -11,6 +11,7 @@ type Registration struct {
 	Enabled                                    bool
 	EnabledFrom                                vbdate.VBDate
 	EnabledTo                                  vbdate.VBDate
+	Type                                       string
 	GroupMin, GroupMax, GroupDefault, GroupInc int
 	Steps                                      []Step
 	CheckSex                                   bool
