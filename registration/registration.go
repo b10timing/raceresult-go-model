@@ -29,6 +29,7 @@ type Step struct {
 	EnabledFrom vbdate.VBDate
 	EnabledTo   vbdate.VBDate
 	Elements    []Element
+	ButtonText  string
 }
 
 type Element struct {
