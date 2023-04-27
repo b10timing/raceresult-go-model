@@ -50,15 +50,13 @@ type Element struct {
 }
 
 type Field struct {
-	Name            string // field name
-	ControlType     string // checkbox, text field, dropdown, option set, propose boxy
-	Mandatory       int
-	DefaultValue    string
-	Placeholder     string
-	Unique          string
-	Values          []Value // dropdown: if empty: use default values (contest, ATF), otherwise use these values
-	ShowOnCheckPage int
-	ForceUpdate     bool
+	Name         string // field name
+	ControlType  string // checkbox, text field, dropdown, option set, propose boxy
+	Mandatory    int
+	DefaultValue string
+	Placeholder  string
+	Unique       string
+	Values       []Value // dropdown: if empty: use default values (contest, ATF), otherwise use these values
 }
 
 type Value struct {
