@@ -1,6 +1,8 @@
 package registration
 
 import (
+	"time"
+
 	"github.com/raceresult/go-model/vbdate"
 )
 
@@ -11,6 +13,8 @@ type Registration struct {
 	Enabled                                    bool
 	EnabledFrom                                vbdate.VBDate
 	EnabledTo                                  vbdate.VBDate
+	TestModeKey                                string
+	TestModeValidUntil                         time.Time
 	Type                                       string
 	GroupMin, GroupMax, GroupDefault, GroupInc int
 	Steps                                      []Step
