@@ -672,3 +672,14 @@ type GroupTime struct {
 	Item  interface{} `json:",omitempty"`
 	Count int
 }
+
+type RegistrationRequestRecord struct {
+	Bib         int
+	Record      variant.VariantMap
+	Expressions []string
+}
+
+type RegistrationRequestResponse struct {
+	Expressions []variant.Variant
+	EntryFees   []EntryFeeItem
+}
