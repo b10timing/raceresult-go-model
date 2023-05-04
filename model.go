@@ -680,6 +680,6 @@ type RegistrationRequestRecord struct {
 }
 
 type RegistrationRequestResponse struct {
-	Expressions []variant.Variant
+	Expressions variant.VariantMap
 	EntryFees   []EntryFeeItem
 }
