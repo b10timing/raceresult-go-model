@@ -9,6 +9,7 @@ import (
 type Registration struct {
 	Name                                       string
 	Key                                        string
+	ChangeKeySalt                              string
 	Title                                      string
 	Enabled                                    bool
 	EnabledFrom                                vbdate.VBDate
