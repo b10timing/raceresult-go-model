@@ -4,17 +4,18 @@ import "github.com/raceresult/go-model/vbdate"
 
 // Kiosk represents all settings of a kiosk
 type Kiosk struct {
-	Name            string
-	Key             string
-	Enabled         bool
-	EnabledFrom     vbdate.VBDate
-	EnabledTo       vbdate.VBDate
-	TransponderMode int
-	AutoFinish      bool
-	CSS             string
-	Title           string
-	Steps           []Step
-	AfterSave       []AfterSave
+	Name                 string
+	Key                  string
+	Enabled              bool
+	EnabledFrom          vbdate.VBDate
+	EnabledTo            vbdate.VBDate
+	TransponderMode      int
+	AcceptedTransponders int
+	AutoFinish           bool
+	CSS                  string
+	Title                string
+	Steps                []Step
+	AfterSave            []AfterSave
 }
 
 type Step struct {
