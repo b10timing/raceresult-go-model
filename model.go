@@ -680,6 +680,7 @@ type RegistrationRequestRecord struct {
 }
 
 type RegistrationRequestResponse struct {
-	Expressions variant.VariantMap
-	EntryFees   []EntryFeeItem
+	Expressions  variant.VariantMap
+	EntryFees    []EntryFeeItem
+	HasDuplicate bool
 }
