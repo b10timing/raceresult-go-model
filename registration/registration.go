@@ -48,6 +48,7 @@ type Element struct {
 	BackgroundColor string
 	Format          string
 	ClassName       string
+	ID              int
 	Common          int // common in group reg
 	ValidationRules []ValidationRule
 	Children        []Element
