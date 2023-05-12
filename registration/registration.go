@@ -17,6 +17,7 @@ type Registration struct {
 	Type                                       string
 	GroupMin, GroupMax, GroupDefault, GroupInc int
 	Steps                                      []Step
+	AdditionalValues                           []AdditionalValue
 	CheckSex                                   bool
 	CheckDuplicate                             bool
 	OnlinePayment                              bool
@@ -70,6 +71,13 @@ type Value struct {
 	EnabledTo   vbdate.VBDate
 	MaxCapacity int
 	ShowIf      string
+}
+
+type AdditionalValue struct {
+	FieldName string
+	Source    string
+	Value     string
+	Filter    string
 }
 
 type Confirmation struct {
