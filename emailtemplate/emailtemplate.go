@@ -26,4 +26,5 @@ const (
 	TypeGroup      Type = 1
 	TypeSMS        Type = 2
 	TypeWebService Type = 3
+	TypeGroupByID  Type = 4
 )
