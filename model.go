@@ -673,6 +673,12 @@ type GroupTime struct {
 	Count int
 }
 
+type RegistrationRequest struct {
+	DataToken    string
+	PaymentToken string
+	Records      []RegistrationRequestRecord
+}
+
 type RegistrationRequestRecord struct {
 	Bib         int
 	Record      variant.VariantMap
