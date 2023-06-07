@@ -28,6 +28,7 @@ type Registration struct {
 }
 
 type Step struct {
+	ID          int
 	Title       string
 	Enabled     bool
 	EnabledFrom vbdate.VBDate
