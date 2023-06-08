@@ -62,6 +62,7 @@ type Field struct {
 	DefaultValue string
 	Placeholder  string
 	Unique       string
+	Special      string
 	Values       []Value // dropdown: if empty: use default values (contest, ATF), otherwise use these values
 }
 
