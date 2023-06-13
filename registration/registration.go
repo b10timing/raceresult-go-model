@@ -21,6 +21,7 @@ type Registration struct {
 	CheckSex                                   bool
 	CheckDuplicate                             bool
 	OnlinePayment                              bool
+	OnlinePaymentButtonText                    string
 	PaymentMethods                             []PaymentMethod
 	Confirmation                               Confirmation
 	AfterSave                                  []AfterSave
