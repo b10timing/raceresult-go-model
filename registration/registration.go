@@ -16,6 +16,8 @@ type Registration struct {
 	TestModeValidUntil                         vbdate.VBDate
 	Type                                       string
 	GroupMin, GroupMax, GroupDefault, GroupInc int
+	Contest                                    int
+	Limit                                      int
 	Steps                                      []Step
 	AdditionalValues                           []AdditionalValue
 	CheckSex                                   bool
