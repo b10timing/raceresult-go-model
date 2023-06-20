@@ -46,6 +46,9 @@ func (s VBDate) Sub(d VBDate) time.Duration {
 
 // ToTime returns the VBDate as time.Time
 func (s VBDate) ToTime() time.Time {
+	if s.IsZero() {
+		return time.Time{}
+	}
 	return time.Time(s)
 }
 
