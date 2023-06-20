@@ -52,7 +52,6 @@ type Element struct {
 	BackgroundColor string
 	Format          string
 	ClassName       string
-	ForceUpdate     bool
 	ID              int
 	Common          int // common in group reg
 	ValidationRules []ValidationRule
@@ -61,13 +60,14 @@ type Element struct {
 
 type Field struct {
 	Name           string // field name
-	ControlType    string // checkbox, text field, dropdown, option set, propose boxy
+	ControlType    string // checkbox, text field, dropdown, option set, propose box
 	Mandatory      int
 	DefaultValue   string
 	Placeholder    string
 	Unique         string
 	Special        string
 	SpecialDetails string
+	ForceUpdate    bool
 	Values         []Value // dropdown: if empty: use default values (contest, ATF), otherwise use these values
 }
 
