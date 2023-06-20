@@ -52,6 +52,7 @@ type Element struct {
 	BackgroundColor string
 	Format          string
 	ClassName       string
+	ForceUpdate     bool
 	ID              int
 	Common          int // common in group reg
 	ValidationRules []ValidationRule
