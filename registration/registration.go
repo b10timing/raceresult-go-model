@@ -48,9 +48,7 @@ type Element struct {
 	EnabledTo       vbdate.VBDate
 	Field           *Field
 	ShowIf          string
-	Color           string
-	BackgroundColor string
-	Format          string
+	Style           map[string]string
 	ClassName       string
 	ID              int
 	Common          int // common in group reg
@@ -60,7 +58,7 @@ type Element struct {
 
 type Field struct {
 	Name           string // field name
-	ControlType    string // checkbox, text field, dropdown, option set, propose box
+	ControlType    string // currently unused
 	Mandatory      int
 	DefaultValue   string
 	Placeholder    string
@@ -68,7 +66,7 @@ type Field struct {
 	Special        string
 	SpecialDetails string
 	ForceUpdate    bool
-	Values         []Value // dropdown: if empty: use default values (contest, ATF), otherwise use these values
+	Values         []Value // advanced drop down value settings
 }
 
 type Value struct {
