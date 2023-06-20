@@ -48,7 +48,7 @@ type Element struct {
 	EnabledTo       vbdate.VBDate
 	Field           *Field
 	ShowIf          string
-	Style           map[string]string
+	Styles          []Style
 	ClassName       string
 	ID              int
 	Common          int // common in group reg
@@ -67,6 +67,11 @@ type Field struct {
 	SpecialDetails string
 	ForceUpdate    bool
 	Values         []Value // advanced drop down value settings
+}
+
+type Style struct {
+	Attribute string
+	Value     string
 }
 
 type Value struct {
