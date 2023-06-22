@@ -30,13 +30,14 @@ type RegistrationContest struct {
 }
 
 type Registration struct {
-	Name        string
-	Title       string
-	Key         string
-	TestModeKey string
-	EnabledFrom time.Time
-	EnabledTo   time.Time
-	ButtonText  string
-	SlotsLeft   int
-	Contests    []RegistrationContest
+	Name         string
+	Title        string
+	Key          string
+	TestModeKey  string
+	EnabledFrom  time.Time
+	EnabledTo    time.Time
+	ShowContests bool
+	ButtonText   string
+	SlotsLeft    int
+	Contests     []RegistrationContest
 }
