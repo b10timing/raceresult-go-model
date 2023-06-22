@@ -13,7 +13,6 @@ type Registration struct {
 	EnabledFrom                                vbdate.VBDate
 	EnabledTo                                  vbdate.VBDate
 	TestModeKey                                string
-	TestModeValidUntil                         vbdate.VBDate
 	Type                                       string
 	GroupMin, GroupMax, GroupDefault, GroupInc int
 	Contest                                    int
