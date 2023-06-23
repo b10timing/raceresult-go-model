@@ -36,6 +36,7 @@ type Registration struct {
 	TestModeKey  string
 	EnabledFrom  time.Time
 	EnabledTo    time.Time
+	InfoText     string
 	ShowContests bool
 	ButtonText   string
 	SlotsLeft    int
