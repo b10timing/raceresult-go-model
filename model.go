@@ -345,6 +345,13 @@ type Split struct {
 	SectorTo2    int
 }
 
+// SplitType constants
+const (
+	SplitTypeSplit    = 0
+	SplitTypeInternal = 2
+	SplitTypeLeg      = 9
+)
+
 // TableValue describes the internal go model
 type TableValue struct {
 	ID     int
