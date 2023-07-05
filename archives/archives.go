@@ -8,6 +8,7 @@ type Participant struct {
 	Transponder2   string                 `json:",omitempty"`
 	RegNo          string                 `json:",omitempty"`
 	Title          string                 `json:",omitempty"`
+	Language       string                 `json:",omitempty"`
 	Lastname       string                 `json:",omitempty"`
 	Firstname      string                 `json:",omitempty"`
 	Sex            string                 `json:",omitempty"`
