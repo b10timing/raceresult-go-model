@@ -47,6 +47,7 @@ type Element struct {
 	EnabledTo       vbdate.VBDate
 	Field           *Field
 	ShowIf          string
+	ShowIfInitial   bool
 	Styles          []Style
 	ClassName       string
 	ID              int
