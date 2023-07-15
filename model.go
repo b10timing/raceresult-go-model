@@ -464,6 +464,7 @@ type Setting struct {
 type UserDefinedField struct {
 	Name       string
 	Expression string
+	Note       string
 }
 
 type VoucherType byte
