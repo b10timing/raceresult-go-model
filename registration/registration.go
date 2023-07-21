@@ -17,6 +17,8 @@ type Registration struct {
 	GroupMin, GroupMax, GroupDefault, GroupInc int
 	Contest                                    int
 	Limit                                      int
+	ChangeIdentityField                        string
+	ChangeIdentityFilter                       string
 	Steps                                      []Step
 	AdditionalValues                           []AdditionalValue
 	CheckSex                                   bool
