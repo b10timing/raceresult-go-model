@@ -42,3 +42,12 @@ type Registration struct {
 	SlotsLeft    int
 	Contests     []RegistrationContest
 }
+
+type RegistrationConfig struct {
+	Registrations []Registration
+	Login         struct {
+		Enabled  bool
+		InfoText string
+		Fields   []string
+	}
+}
