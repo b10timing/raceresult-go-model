@@ -33,6 +33,7 @@ type Registration struct {
 	Name         string
 	Title        string
 	Key          string
+	Type         string
 	TestModeKey  string
 	EnabledFrom  time.Time
 	EnabledTo    time.Time
