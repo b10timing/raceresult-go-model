@@ -1,6 +1,7 @@
 package portal
 
 import (
+	"github.com/raceresult/go-model/variant"
 	"time"
 
 	"github.com/raceresult/go-model/decimal"
@@ -51,4 +52,10 @@ type RegistrationConfig struct {
 		InfoText string
 		Fields   []string
 	}
+}
+
+type RegistrationLoginResponse struct {
+	ID         int
+	ChangeKeys map[string]string
+	Fields     variant.VariantMap
 }
