@@ -1,8 +1,9 @@
 package portal
 
 import (
-	"github.com/raceresult/go-model/variant"
 	"time"
+
+	"github.com/raceresult/go-model/variant"
 
 	"github.com/raceresult/go-model/decimal"
 	"github.com/raceresult/go-model/vbdate"
@@ -50,7 +51,10 @@ type RegistrationConfig struct {
 	Login         struct {
 		Enabled  bool
 		InfoText string
-		Fields   []string
+		Fields   []struct {
+			Name  string
+			Label string
+		}
 	}
 }
 
