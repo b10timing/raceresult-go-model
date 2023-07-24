@@ -3,8 +3,6 @@ package portal
 import (
 	"time"
 
-	"github.com/raceresult/go-model/variant"
-
 	"github.com/raceresult/go-model/decimal"
 	"github.com/raceresult/go-model/vbdate"
 )
@@ -61,5 +59,5 @@ type RegistrationConfig struct {
 type RegistrationLoginResponse struct {
 	ID         int
 	ChangeKeys map[string]string
-	Fields     variant.VariantMap
+	LoginName  string
 }
