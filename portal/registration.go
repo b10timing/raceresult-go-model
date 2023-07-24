@@ -42,6 +42,7 @@ type Registration struct {
 	ButtonText   string
 	SlotsLeft    int
 	Contests     []RegistrationContest
+	IfLoggedIn   bool
 }
 
 type RegistrationConfig struct {
