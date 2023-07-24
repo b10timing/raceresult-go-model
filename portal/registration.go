@@ -47,9 +47,10 @@ type Registration struct {
 type RegistrationConfig struct {
 	Registrations []Registration
 	Login         struct {
-		Enabled  bool
-		InfoText string
-		Fields   []struct {
+		Enabled        bool
+		InfoText       string
+		LoginNameField string
+		Fields         []struct {
 			Name  string
 			Label string
 		}
