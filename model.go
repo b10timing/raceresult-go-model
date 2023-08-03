@@ -352,6 +352,29 @@ const (
 	SplitTypeLeg      = 9
 )
 
+const (
+	SplitTimeModeRefSplit = 1
+	SplitTimeModeRaceTime = 0
+	SplitTimeModeTOD      = -1
+	SplitTimeModeDelta    = -2
+	SplitTimeModeMinKm    = -3
+	SplitTimeModeMinMile  = -4
+	SplitTimeModeMin100m  = -5
+	SplitTimeModeKmh      = -6
+	SplitTimeModeMph      = -7
+	SplitTimeModeMps      = -8
+)
+
+const (
+	SplitSpeedNone       = 0
+	SplitSpeedMinPerKM   = 1
+	SplitSpeedMinPerMile = 2
+	SplitSpeedMinPer100m = 3
+	SplitSpeedKmh        = 4
+	SplitSpeedMph        = 5
+	SplitSpeedMps        = 6
+)
+
 // TableValue describes the internal go model
 type TableValue struct {
 	ID     int
