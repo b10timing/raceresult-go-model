@@ -49,7 +49,8 @@ type Element struct {
 	EnabledTo       vbdate.VBDate
 	Field           *Field
 	ShowIf          string
-	ShowIfInitial   bool
+	ShowIfCurr      string
+	ShowIfInitial   bool // legacy, can be removed at some point
 	Styles          []Style
 	ClassName       string
 	ID              int
