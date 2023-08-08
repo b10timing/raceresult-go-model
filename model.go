@@ -602,11 +602,12 @@ type SaveValueArrayItem struct {
 
 // EntryFeeItem is an entry fee item which is charged to a participant
 type EntryFeeItem struct {
-	ID    int
-	Name  string
-	Fee   decimal.Decimal
-	Field string
-	Tax   decimal.Decimal
+	ID             int
+	Name           string
+	Fee            decimal.Decimal
+	Field          string
+	Tax            decimal.Decimal
+	Multiplication decimal.Decimal
 }
 
 type ImportResult struct {
