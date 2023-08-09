@@ -88,10 +88,11 @@ type Value struct {
 }
 
 type AdditionalValue struct {
-	FieldName string
-	Source    string
-	Value     string
-	Filter    string
+	FieldName     string
+	Source        string
+	Value         string
+	Filter        string
+	FilterInitial string
 }
 
 type Confirmation struct {
