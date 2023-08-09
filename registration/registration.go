@@ -51,7 +51,7 @@ type Element struct {
 	ShowIf          string
 	ShowIfMode      int
 	ShowIfCurr      string
-	ShofIfCurrMode  int
+	ShowIfCurrMode  int
 	ShowIfInitial   bool // legacy, can be removed at some point
 	Styles          []Style
 	ClassName       string
