@@ -307,6 +307,8 @@ type RawDataDistinctValues struct {
 	DecoderID      []string
 	OrderID        []int
 	BatteryVoltage []int
+	Hits           []int
+	RSSI           []int
 }
 
 // Result describes the internal go model
