@@ -2,6 +2,7 @@ package variant
 
 import (
 	"encoding/json"
+	"strings"
 )
 
 type VariantMap map[string]Variant
@@ -20,4 +21,14 @@ func (s *VariantMap) UnmarshalJSON(data []byte) error {
 		(*s)[k] = ToVariant(v)
 	}
 	return nil
+}
+
+// GetItem returns the value with the given key with case-insensitive search
+func (s *VariantMap) GetItem(key string) (Variant, bool) {
+	for k, v := range *s {
+		if strings.EqualFold(k, key) {
+			return v, true
+		}
+	}
+	return nil, false
 }
