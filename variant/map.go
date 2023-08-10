@@ -25,6 +25,9 @@ func (s *VariantMap) UnmarshalJSON(data []byte) error {
 
 // GetItem returns the value with the given key with case-insensitive search
 func (s *VariantMap) GetItem(key string) (Variant, bool) {
+	if v, ok := (*s)[key]; ok {
+		return v, true
+	}
 	for k, v := range *s {
 		if strings.EqualFold(k, key) {
 			return v, true
