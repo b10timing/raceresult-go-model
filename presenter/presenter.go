@@ -6,14 +6,15 @@ import (
 
 // Presenter represents all settings of a Presenter screen
 type Presenter struct {
-	Name        string
-	Key         string
-	Title       string
-	Enabled     bool
-	EnabledFrom vbdate.VBDate
-	EnabledTo   vbdate.VBDate
-	SwitchMode  string
-	Screens     []Screen
+	Name         string
+	Key          string
+	Title        string
+	Enabled      bool
+	EnabledFrom  vbdate.VBDate
+	EnabledTo    vbdate.VBDate
+	SwitchMode   string
+	AutoHideTabs bool
+	Screens      []Screen
 }
 
 // Screen represents a screen as part of a Presenter
