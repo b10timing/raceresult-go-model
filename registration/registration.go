@@ -72,6 +72,7 @@ type Field struct {
 	SpecialDetails string
 	ForceUpdate    bool
 	Values         []Value // advanced drop down value settings
+	Flags          []string
 }
 
 type Style struct {
