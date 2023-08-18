@@ -24,6 +24,7 @@ type Statistics struct {
 	Field            string
 	Aggregation      Aggregation
 	SortByValue      bool
+	SortDesc         bool
 	Headline1        string
 	Headline2        string
 	LineSpacing      decimal.Decimal
