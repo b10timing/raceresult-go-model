@@ -71,8 +71,8 @@ type Field struct {
 	Special           string
 	SpecialDetails    string
 	ForceUpdate       bool
-	Values            []Value // advanced drop down value settings
-	AdditionalOptions []Value // additional options for PROPOSE/SELECT
+	Values            []Value  // advanced drop down value settings
+	AdditionalOptions []string // additional options for PROPOSE/SELECT
 	Flags             []string
 }
 
