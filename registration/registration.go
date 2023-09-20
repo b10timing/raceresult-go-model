@@ -62,17 +62,18 @@ type Element struct {
 }
 
 type Field struct {
-	Name           string // field name
-	ControlType    string // currently unused
-	Mandatory      int
-	DefaultValue   string
-	Placeholder    string
-	Unique         string
-	Special        string
-	SpecialDetails string
-	ForceUpdate    bool
-	Values         []Value // advanced drop down value settings
-	Flags          []string
+	Name              string // field name
+	ControlType       string // currently unused
+	Mandatory         int
+	DefaultValue      string
+	Placeholder       string
+	Unique            string
+	Special           string
+	SpecialDetails    string
+	ForceUpdate       bool
+	Values            []Value // advanced drop down value settings
+	AdditionalOptions []Value // additional options for PROPOSE/SELECT
+	Flags             []string
 }
 
 type Style struct {
