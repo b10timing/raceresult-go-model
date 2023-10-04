@@ -19,6 +19,7 @@ type Presenter struct {
 
 // Screen represents a screen as part of a Presenter
 type Screen struct {
+	Disabled        bool
 	Title           string
 	BackgroundColor string
 	BackgroundImage string
