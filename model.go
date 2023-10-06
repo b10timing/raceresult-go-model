@@ -710,6 +710,7 @@ type GroupTime struct {
 type RegistrationRequest struct {
 	DataToken    string
 	PaymentToken string
+	RegName      string
 	Records      []RegistrationRequestRecord
 }
 
