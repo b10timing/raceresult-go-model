@@ -37,5 +37,7 @@ type Statistics struct {
 	PageMarginRight  decimal.Decimal
 	PageMarginTop    decimal.Decimal
 	PageSize         page.Size
+	PageHeight       decimal.Decimal
+	PageWidth        decimal.Decimal
 	TopLeftHeader    string
 }

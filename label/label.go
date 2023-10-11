@@ -9,6 +9,8 @@ type Label struct {
 	Name              string `json:"LabelName"`
 	PageFormat        page.Format
 	PageSize          page.Size
+	PageHeight        decimal.Decimal
+	PageWidth         decimal.Decimal
 	PageMarginTop     decimal.Decimal
 	PageMarginLeft    decimal.Decimal
 	Width             decimal.Decimal

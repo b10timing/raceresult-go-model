@@ -63,8 +63,8 @@ type List struct {
 	PageMarginRight                decimal.Decimal
 	PageMarginTop                  decimal.Decimal
 	PageSize                       page.Size
-	PageHeight                     int
-	PageWidth                      int
+	PageHeight                     decimal.Decimal
+	PageWidth                      decimal.Decimal
 	SepLine                        bool
 	TopRightPicture                string
 	TopRightPictureShow            ShowAt
