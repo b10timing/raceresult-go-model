@@ -14,7 +14,7 @@ const (
 	SizeUserDefined Size = 8
 )
 
-func ToMM(s Size, landscape bool) (int, int) {
+func (s Size) ToMM(landscape bool) (int, int) {
 	var w, h int
 	switch s {
 	case SizeA1:

@@ -63,8 +63,8 @@ type List struct {
 	PageMarginRight                decimal.Decimal
 	PageMarginTop                  decimal.Decimal
 	PageSize                       page.Size
-	PageHeight                     int `json:",omitempty"`
-	PageWidth                      int `json:",omitempty"`
+	PageHeight                     int
+	PageWidth                      int
 	SepLine                        bool
 	TopRightPicture                string
 	TopRightPictureShow            ShowAt
