@@ -1,5 +1,7 @@
 package page
 
+import "github.com/raceresult/go-model/decimal"
+
 type Size int
 
 const (
@@ -14,8 +16,8 @@ const (
 	SizeUserDefined Size = 8
 )
 
-func (s Size) ToMM(landscape bool) (int, int) {
-	var w, h int
+func (s Size) ToMM(landscape bool) (decimal.Decimal, decimal.Decimal) {
+	var w, h decimal.Decimal
 	switch s {
 	case SizeA1:
 		w = 594
