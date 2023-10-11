@@ -2,6 +2,7 @@ package statistic
 
 import (
 	"github.com/raceresult/go-model/decimal"
+	"github.com/raceresult/go-model/page"
 )
 
 type Aggregation int
@@ -30,32 +31,11 @@ type Statistics struct {
 	LineSpacing      decimal.Decimal
 	FontName         string
 	FontSize         int
-	PageFormat       PageFormat
+	PageFormat       page.Format
 	PageMarginBottom decimal.Decimal
 	PageMarginLeft   decimal.Decimal
 	PageMarginRight  decimal.Decimal
 	PageMarginTop    decimal.Decimal
-	PageSize         PageSize
+	PageSize         page.Size
 	TopLeftHeader    string
 }
-
-type PageSize int
-
-const (
-	PSA1          PageSize = 0
-	PSA2          PageSize = 1
-	PSA3          PageSize = 2
-	PSA4          PageSize = 3
-	PSA5          PageSize = 4
-	PSLetter      PageSize = 5
-	PSLegal       PageSize = 6
-	PSA6          PageSize = 7
-	PSUserDefined PageSize = 8
-)
-
-type PageFormat int
-
-const (
-	PFPortrait  PageFormat = 0
-	PFLandscape PageFormat = 1
-)
