@@ -109,6 +109,7 @@ type AfterSave struct {
 	Value       string
 	Destination string
 	Filter      string
+	Flags       []string
 }
 
 type PaymentMethod struct {
