@@ -237,10 +237,23 @@ type History struct {
 	DateTimeTZOffset int
 }
 
-// HistoryCount is the result of an history result query
+// HistoryCount is the result of a history result query
 type HistoryCount struct {
 	IDBib int
 	Count int
+}
+
+// HistoryEntry is external model api model for history entries
+type HistoryEntry struct {
+	ID          int
+	Bib         int
+	PartID      int
+	DateTime    time.Time
+	FieldName   string
+	OldValue    variant.Variant
+	NewValue    variant.Variant
+	User        string
+	Application string
 }
 
 // Overwrite describes the internal go model
