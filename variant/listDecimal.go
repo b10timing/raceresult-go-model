@@ -204,8 +204,14 @@ func (s DecimalList) Div(p RList) RList {
 			result[i] = s[i].Div(v[i])
 		}
 		return result
-	case IntList, BoolList, DateList, DecimalList:
+	case IntList, BoolList, DateList:
 		return s.Div(v.ToFloat64())
+	case DecimalList:
+		result := NewVariantList(len(s))
+		for i := range s {
+			result[i] = rDecimal(s[i]).div(v.Item(i))
+		}
+		return result
 	case StringList:
 		result := NewVariantList(len(s))
 		for i := range s {

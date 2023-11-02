@@ -145,13 +145,33 @@ func (s rDecimal) div(p Variant) Variant {
 	if p == nil || !p.isNumeric() {
 		return nil
 	}
-	x := p.toFloat64()
-	if x == 0 {
-		return nil
-	}
-	return RFloat(s.toDecimal().Div(x))
-}
+	switch v := p.(type) {
+	case rDecimal:
+		if v == 0 {
+			return nil
+		}
+		if (decimal.Decimals*s)%v == 0 {
+			return RDecimal(s.toDecimal().DivDecimal(v.toDecimal()))
+		}
+		return RFloat(s.toDecimal().Div(v.toFloat64()))
 
+	case rInt:
+		if v == 0 {
+			return nil
+		}
+		if int64(s.toDecimal())%int64(v) == 0 {
+			return RDecimal(decimal.Decimal(int64(s.toDecimal()) / int64(v)))
+		}
+		return RFloat(s.toDecimal().Div(v.toFloat64()))
+
+	default:
+		x := p.toFloat64()
+		if x == 0 {
+			return nil
+		}
+		return RFloat(s.toDecimal().Div(x))
+	}
+}
 func (s rDecimal) divInt(p Variant) Variant {
 	if p == nil || !p.isNumeric() {
 		return nil
