@@ -15,6 +15,7 @@ type Presenter struct {
 	SwitchMode   string
 	AutoHideTabs bool
 	Screens      []Screen
+	CSS          string
 }
 
 // Screen represents a screen as part of a Presenter
