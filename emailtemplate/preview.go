@@ -38,3 +38,11 @@ type Preview struct {
 	Attachments []Attachment `json:",omitempty"`
 	Auth        string       `json:",omitempty"`
 }
+
+type PreviewAttachment struct {
+	Type  AttachmentType
+	Name  string
+	Label string
+	Bib   int
+	PID   int
+}
