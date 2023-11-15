@@ -6,10 +6,11 @@ import (
 )
 
 type Attachment struct {
-	Type   AttachmentType `xml:"type"`
-	Name   string         `xml:"name"`
-	Label  string         `xml:"label"`
-	Filter string         `xml:"filter"`
+	Type    AttachmentType        `xml:"type"`
+	Name    string                `xml:"name"`
+	Label   string                `xml:"label"`
+	Filter  string                `xml:"filter"`
+	SendFor AttachmentSendForType `xml:"sendFor"`
 }
 
 type AttachmentType int
@@ -18,6 +19,15 @@ const (
 	AttachmentTypeFile        AttachmentType = 0
 	AttachmentTypeCertificate AttachmentType = 1
 	AttachmentTypeURL         AttachmentType = 2
+)
+
+type AttachmentSendForType int
+
+const (
+	AttachmentSendForLast AttachmentSendForType = iota
+	AttachmentSendForFirst
+	AttachmentSendForAll
+	AttachmentSendForAny
 )
 
 // UnmarshalXML parses a AttachmentType from XML
