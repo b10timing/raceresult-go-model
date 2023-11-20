@@ -284,10 +284,10 @@ type RawData struct {
 	Time          decimal.Decimal
 	DecoderID     string
 	DecoderName   string
-	Hits          int
-	RSSI          int
-	LoopID        int
-	ChannelID     int
+	Hits          byte
+	RSSI          byte
+	LoopID        byte
+	ChannelID     byte
 	OrderID       int
 	WakeupCounter int
 	Battery       int
