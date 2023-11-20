@@ -461,8 +461,8 @@ type TimingPointRule struct {
 	Group       string
 	DecoderID   string
 	DecoderName string
-	LoopID      int
-	ChannelID   int
+	LoopID      byte
+	ChannelID   byte
 	OrderID     int
 	MinTime     decimal.Decimal
 	MaxTime     decimal.Decimal
