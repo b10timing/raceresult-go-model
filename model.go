@@ -540,13 +540,13 @@ type Passing struct {
 	ResultID      int
 	InfoText      string
 	Position      PassingPosition
-	Hits          int
-	RSSI          int
+	Hits          byte
+	RSSI          byte
 	Battery       int
 	Temperature   int
 	WakeupCounter int `json:"WUC"`
-	LoopID        int
-	Channel       int
+	LoopID        byte
+	Channel       byte
 	InternalData  string
 	StatusFlags   int
 	DeviceID      string
