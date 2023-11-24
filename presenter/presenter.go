@@ -30,18 +30,19 @@ type Screen struct {
 
 // Window represents a window as part of a Presenter Screen
 type Window struct {
-	ItemType      string
-	ItemName      string
-	Left, Top     int
-	Width, Height int
-	Contests      []int
-	Results       []int
-	TimingPoints  []string
-	Splits        []string
-	ScrollMode    string
-	PageTime      int
-	FontSize      int
-	ScrollBar     int
-	Filter        string
-	ShowFilter    bool
+	ItemType             string
+	ItemName             string
+	Left, Top            int
+	Width, Height        int
+	Contests             []int
+	Results              []int
+	TimingPoints         []string
+	Splits               []string
+	ScrollMode           string
+	PageTime             int
+	FontSize             int
+	ScrollBar            int
+	Filter               string
+	ShowFilter           bool
+	IgnoreManualPassings bool
 }
