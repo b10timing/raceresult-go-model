@@ -35,6 +35,7 @@ type Preview struct {
 	Subject     string              `json:",omitempty"`
 	Text        string              `json:",omitempty"`
 	URL         string              `json:",omitempty"`
+	Method      string              `json:",omitempty"`
 	Attachments []PreviewAttachment `json:",omitempty"`
 	Auth        string              `json:",omitempty"`
 }
