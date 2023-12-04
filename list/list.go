@@ -116,16 +116,17 @@ type Filter struct {
 
 // Field represents one field of a list definition
 type Field struct {
-	Expression     string          `xml:"Exp"`
-	Label          string          `xml:"La"`
-	Label2         string          `xml:"La2"`
-	Alignment      int             `xml:"A"`
-	FontBold       bool            `xml:"B"`
-	FontItalic     bool            `xml:"I"`
-	FontUnderlined bool            `xml:"U"`
-	Line           int             `xml:"Li"`
-	Color          string          `xml:"C"`
-	Link           string          `xml:"Link"`
+	Expression     string `xml:"Exp"`
+	Label          string `xml:"La"`
+	Label2         string `xml:"La2"`
+	Alignment      int    `xml:"A"`
+	FontBold       bool   `xml:"B"`
+	FontItalic     bool   `xml:"I"`
+	FontUnderlined bool   `xml:"U"`
+	Line           int    `xml:"Li"`
+	Color          string `xml:"C"`
+	Link           string `xml:"Link"`
+	ColSpan        int
 	ColOffset      int             `xml:"CO"`
 	Position       decimal.Decimal `xml:"P"`
 	DynamicFormat  string          `xml:"DF"`
