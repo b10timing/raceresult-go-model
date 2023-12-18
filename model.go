@@ -562,8 +562,9 @@ type Passing struct {
 	// not used, but may be relevant in the future
 	FileNo    int
 	PassingNo int
-	Received  time.Time
 	Customer  int
+	Received  time.Time
+	UTCTime   time.Time
 }
 
 type PassingPosition struct {
