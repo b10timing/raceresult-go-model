@@ -580,7 +580,7 @@ type TimesAddResponseItem struct {
 	ResultName  string
 	RawDataID   int
 	TimingPoint string
-	Fields      map[string]variant.Variant
+	Fields      variant.VariantMap
 }
 
 // ForwardingInfo contains statistics about the backup/forwarding
