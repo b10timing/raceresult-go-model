@@ -544,13 +544,13 @@ type Passing struct {
 	Transponder   string
 	Time          decimal.Decimal
 	Position      PassingPosition
-	Hits          byte
-	RSSI          byte
+	Hits          int
+	RSSI          int
 	Battery       int
 	Temperature   int
 	WakeupCounter int `json:"WUC"`
-	LoopID        byte
-	Channel       byte
+	LoopID        int
+	Channel       int
 	InternalData  string
 	StatusFlags   int
 	DeviceID      string
