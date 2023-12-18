@@ -531,14 +531,18 @@ type Voucher struct {
 	OrderPos   float64
 }
 
-// Passing is a passing for the times/ddd function
+type PassingToProcess struct {
+	Bib         int
+	TimingPoint string
+	ResultID    int
+	InfoText    string
+	Passing     Passing
+}
+
+// Passing is a passing for the times/add function
 type Passing struct {
-	Bib           int
 	Transponder   string
-	Time          string
-	TimingPoint   string
-	ResultID      int
-	InfoText      string
+	Time          decimal.Decimal
 	Position      PassingPosition
 	Hits          byte
 	RSSI          byte
@@ -553,6 +557,7 @@ type Passing struct {
 	DeviceName    string
 	OrderID       int
 	Port          int
+	IsMarker      bool
 
 	// not used, but may be relevant in the future
 	FileNo    int
@@ -566,6 +571,16 @@ type PassingPosition struct {
 	Longitude float64
 	Altitude  int
 	Flag      string
+}
+
+type TimesAddResponseItem struct {
+	Status      int
+	Time        decimal.Decimal
+	ResultID    int
+	ResultName  string
+	RawDataID   int
+	TimingPoint string
+	Fields      map[string]variant.Variant
 }
 
 // ForwardingInfo contains statistics about the backup/forwarding
@@ -641,16 +656,6 @@ type UserRight struct {
 	UserName string
 	UserPic  string
 	Rights   string
-}
-
-type TimesAddResponseItem struct {
-	Status      int
-	Time        decimal.Decimal
-	ResultID    int
-	ResultName  string
-	RawDataID   int
-	TimingPoint string
-	Fields      map[string]variant.Variant
 }
 
 // SimpleAPIItem represents one entry in the SimpleAPI table
