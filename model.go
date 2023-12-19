@@ -278,27 +278,12 @@ type Ranking struct {
 
 // RawData describes the internal go model
 type RawData struct {
-	ID            int
-	TimingPoint   string
-	IDBib         int
-	Time          decimal.Decimal
-	DecoderID     string
-	DecoderName   string
-	Hits          byte
-	RSSI          byte
-	LoopID        byte
-	ChannelID     byte
-	OrderID       int
-	WakeupCounter int
-	Battery       int
-	Temperature   int
-	StatusFlags   int
-	Result        int
-	Invalid       bool
-	Transponder   string
-	Latitude      float64
-	Longitude     float64
-	Port          int
+	ID          int
+	Bib         int
+	TimingPoint string
+	Result      int
+	Invalid     bool
+	Passing     Passing
 }
 
 // RawDataRule describes the internal go model
@@ -558,13 +543,11 @@ type Passing struct {
 	OrderID       int
 	Port          int
 	IsMarker      bool
-
-	// not used, but may be relevant in the future
-	FileNo    int
-	PassingNo int
-	Customer  int
-	Received  time.Time
-	UTCTime   time.Time
+	FileNo        int
+	PassingNo     int
+	Customer      int
+	Received      time.Time
+	UTCTime       time.Time
 }
 
 type PassingPosition struct {
