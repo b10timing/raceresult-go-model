@@ -286,6 +286,16 @@ type RawData struct {
 	Passing     Passing
 }
 
+type RawDataReduced struct {
+	TimingPoint string
+	Bib         int
+	Time        decimal.Decimal
+	Invalid     bool
+	OrderID     int
+	Result      int
+	RSSI        byte
+}
+
 // RawDataRule describes the internal go model
 type RawDataRule struct {
 	ID        int
