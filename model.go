@@ -314,7 +314,7 @@ type RawDataRule struct {
 type RawDataDistinctValues struct {
 	DecoderID      []string
 	OrderID        []int
-	BatteryVoltage []int
+	BatteryVoltage []decimal.Decimal
 	Hits           []int
 	RSSI           []int
 }
@@ -541,7 +541,7 @@ type Passing struct {
 	Position      PassingPosition
 	Hits          int
 	RSSI          int
-	Battery       int
+	Battery       decimal.Decimal
 	Temperature   int
 	WakeupCounter int `json:"WUC"`
 	LoopID        byte
