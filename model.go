@@ -544,8 +544,8 @@ type Passing struct {
 	Battery       int
 	Temperature   int
 	WakeupCounter int `json:"WUC"`
-	LoopID        int
-	Channel       int
+	LoopID        byte
+	Channel       byte
 	InternalData  string
 	StatusFlags   int
 	DeviceID      string
