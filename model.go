@@ -294,6 +294,7 @@ type RawDataReduced struct {
 	Invalid     bool
 	OrderID     int
 	Result      int
+	IsMarker    bool
 	RSSI        byte
 }
 
