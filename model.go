@@ -623,6 +623,7 @@ const (
 	TriggerNewSplit         TriggerType = 7
 	TriggerModJobIDSimple   TriggerType = 8
 	TriggerSettingValue     TriggerType = 9
+	TriggerNewRawDataV2     TriggerType = 10
 )
 
 type SaveValueArrayItem struct {
