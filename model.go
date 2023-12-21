@@ -286,6 +286,7 @@ type RawData struct {
 	Passing     Passing
 }
 
+// RawDataReduced describes the internal go model
 type RawDataReduced struct {
 	TimingPoint string
 	Bib         int
@@ -294,6 +295,12 @@ type RawDataReduced struct {
 	OrderID     int
 	Result      int
 	RSSI        byte
+}
+
+// RawDataWithAdditionalFields describes the internal go model
+type RawDataWithAdditionalFields struct {
+	RawData
+	Fields variant.VariantMap `json:",omitempty"`
 }
 
 // RawDataRule describes the internal go model
