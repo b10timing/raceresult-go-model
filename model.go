@@ -298,6 +298,26 @@ type RawDataReduced struct {
 	RSSI        byte
 }
 
+// RawDataFilter describes the internal go model
+type RawDataFilter struct {
+	TimingPoint []string
+	MinTime     decimal.Decimal
+	MaxTime     decimal.Decimal
+	Result      []int
+	DeviceID    []string
+	DeviceName  []string
+	Transponder []string
+	OrderID     []int
+	Hits        []int
+	RSSI        []int
+	LoopID      []int
+	Channel     []int
+	Battery     []decimal.Decimal
+	Port        []int
+	StatusFlags []int
+	IsMarker    []bool
+}
+
 // RawDataWithAdditionalFields describes the internal go model
 type RawDataWithAdditionalFields struct {
 	RawData
