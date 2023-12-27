@@ -300,23 +300,25 @@ type RawDataReduced struct {
 
 // RawDataFilter describes the internal go model
 type RawDataFilter struct {
-	ID          []int
-	TimingPoint []string
-	MinTime     decimal.Decimal
-	MaxTime     decimal.Decimal
-	Result      []int
-	DeviceID    []string
-	DeviceName  []string
-	Transponder []string
-	OrderID     []int
-	Hits        []int
-	RSSI        []int
-	LoopID      []byte
-	Channel     []byte
-	Battery     []decimal.Decimal
-	Port        []int
-	StatusFlags []int
-	IsMarker    []bool
+	ID          []int             `json:",omitempty"`
+	MinID       int               `json:",omitempty"`
+	MaxID       int               `json:",omitempty"`
+	TimingPoint []string          `json:",omitempty"`
+	MinTime     decimal.Decimal   `json:",omitempty"`
+	MaxTime     decimal.Decimal   `json:",omitempty"`
+	Result      []int             `json:",omitempty"`
+	DeviceID    []string          `json:",omitempty"`
+	DeviceName  []string          `json:",omitempty"`
+	Transponder []string          `json:",omitempty"`
+	OrderID     []int             `json:",omitempty"`
+	Hits        []int             `json:",omitempty"`
+	RSSI        []int             `json:",omitempty"`
+	LoopID      []byte            `json:",omitempty"`
+	Channel     []byte            `json:",omitempty"`
+	Battery     []decimal.Decimal `json:",omitempty"`
+	Port        []int             `json:",omitempty"`
+	StatusFlags []int             `json:",omitempty"`
+	IsMarker    []bool            `json:",omitempty"`
 }
 
 // RawDataWithAdditionalFields describes the internal go model
