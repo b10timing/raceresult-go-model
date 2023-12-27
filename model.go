@@ -300,6 +300,7 @@ type RawDataReduced struct {
 
 // RawDataFilter describes the internal go model
 type RawDataFilter struct {
+	ID          []int
 	TimingPoint []string
 	MinTime     decimal.Decimal
 	MaxTime     decimal.Decimal
