@@ -310,8 +310,8 @@ type RawDataFilter struct {
 	OrderID     []int
 	Hits        []int
 	RSSI        []int
-	LoopID      []int
-	Channel     []int
+	LoopID      []byte
+	Channel     []byte
 	Battery     []decimal.Decimal
 	Port        []int
 	StatusFlags []int
