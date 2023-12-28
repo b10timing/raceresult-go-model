@@ -282,6 +282,7 @@ type RawData struct {
 	Bib         int
 	TimingPoint string
 	Result      int
+	Time        decimal.Decimal
 	Invalid     bool
 	Passing     Passing
 }
@@ -563,6 +564,7 @@ type PassingToProcess struct {
 	Bib         int
 	TimingPoint string
 	ResultID    int
+	Time        decimal.Decimal
 	InfoText    string
 	Passing     Passing
 }
@@ -570,7 +572,7 @@ type PassingToProcess struct {
 // Passing is a passing for the times/add function
 type Passing struct {
 	Transponder   string
-	Time          decimal.Decimal
+	Time          decimal.Decimal // legacy, remove 2024
 	Position      PassingPosition
 	Hits          int
 	RSSI          int
