@@ -318,6 +318,8 @@ type RawDataFilter struct {
 	Battery     []decimal.Decimal `json:",omitempty"`
 	Port        []int             `json:",omitempty"`
 	StatusFlags []int             `json:",omitempty"`
+	FileNo      []int             `json:",omitempty"`
+	PassingNo   []int             `json:",omitempty"`
 	IsMarker    []bool            `json:",omitempty"`
 }
 
