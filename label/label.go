@@ -13,6 +13,8 @@ type Label struct {
 	PageWidth         decimal.Decimal
 	PageMarginTop     decimal.Decimal
 	PageMarginLeft    decimal.Decimal
+	PageMarginBottom  decimal.Decimal
+	PageMarginRight   decimal.Decimal
 	Width             decimal.Decimal
 	Height            decimal.Decimal
 	SpacingVertical   decimal.Decimal
