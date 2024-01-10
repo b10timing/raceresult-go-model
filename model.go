@@ -574,7 +574,6 @@ type PassingToProcess struct {
 // Passing is a passing for the times/add function
 type Passing struct {
 	Transponder   string
-	Time          decimal.Decimal // legacy, remove 2024
 	Position      PassingPosition
 	Hits          int
 	RSSI          int
