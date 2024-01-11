@@ -599,7 +599,7 @@ type Passing struct {
 type PassingPosition struct {
 	Latitude  float64
 	Longitude float64
-	Altitude  int
+	Altitude  float64
 	Flag      string
 }
 
