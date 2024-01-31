@@ -57,14 +57,14 @@ func FromString(s string) (Decimal, error) {
 
 // ToString converts a decimal to a string with max 4 Decimals.
 func (s Decimal) ToString() string {
-	t := s
-	p := ""
-	if t < 0 {
+	var p string
+	seconds := int64(s) / Decimals
+	decs := int(int64(s) - (seconds * Decimals))
+	if s < 0 {
+		seconds *= -1
+		decs *= -1
 		p = "-"
-		t *= -1
 	}
-	seconds := int64(t) / Decimals
-	decs := int(int64(t) - (seconds * Decimals))
 	switch {
 	case decs == 0:
 		return p + strconv.Itoa(int(seconds))
