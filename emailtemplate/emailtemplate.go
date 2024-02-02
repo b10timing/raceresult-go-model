@@ -1,5 +1,10 @@
 package emailtemplate
 
+type HTTPHeader struct {
+	Name  string
+	Value string
+}
+
 type EmailTemplate struct {
 	Name                       string
 	Type                       Type
@@ -18,6 +23,7 @@ type EmailTemplate struct {
 	SetCustomFieldAfterSending string
 	SaveResultIn               string
 	Attachments                []Attachment `xml:"attachment"`
+	HTTPHeaders                []HTTPHeader
 }
 
 type Type int
