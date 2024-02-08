@@ -117,7 +117,7 @@ func (s VBDate) ToString() string {
 		return ""
 	}
 	t := time.Time(s)
-	if t.Unix()%86400 == 0 {
+	if t.Hour() == 0 && t.Minute() == 0 && t.Second() == 0 {
 		return t.Format(dateFormat)
 	}
 	return t.Format(dateTimeFormat)
