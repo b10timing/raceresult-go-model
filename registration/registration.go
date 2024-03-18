@@ -29,6 +29,7 @@ type Registration struct {
 	Confirmation                               Confirmation
 	AfterSave                                  []AfterSave
 	CSS                                        string
+	ErrorMessages                              ErrorMessages
 }
 
 type Step struct {
@@ -124,4 +125,9 @@ type PaymentMethod struct {
 type ValidationRule struct {
 	Rule string
 	Msg  string
+}
+
+type ErrorMessages struct {
+	BeforRegStart string
+	AfterRegEnd   string
 }
