@@ -28,6 +28,7 @@ type Preview struct {
 	PID         PreviewIDList
 	Sender      string              `json:",omitempty"`
 	SenderName  string              `json:",omitempty"`
+	ReplyTo     string              `json:",omitempty"`
 	CC          string              `json:",omitempty"`
 	BCC         string              `json:",omitempty"`
 	CellPhone   string              `json:",omitempty"`
