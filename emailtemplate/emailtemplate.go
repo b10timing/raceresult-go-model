@@ -10,6 +10,7 @@ type EmailTemplate struct {
 	Type                       Type
 	Sender                     string
 	SenderName                 string
+	ReplyTo                    string
 	CC                         string
 	BCC                        string
 	ReceiverField              string
