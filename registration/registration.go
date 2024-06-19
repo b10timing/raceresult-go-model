@@ -67,6 +67,7 @@ type Field struct {
 	ControlType       string // currently unused
 	Mandatory         int
 	DefaultValue      string
+	DefaultValueType  string
 	Placeholder       string
 	Unique            string
 	Special           string
