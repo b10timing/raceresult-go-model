@@ -39,6 +39,7 @@ const (
 	PmRedSys           int = 34
 	PmMollieBancontact int = 35
 	PmPayTabs          int = 36
+	PmAsiaPay	   int = 37
 	PmCB               int = 99
 )
 
