@@ -36,6 +36,7 @@ type AfterSave struct {
 	Value       string
 	Destination string
 	Filter      string
+	Printer     string
 }
 
 type DisplayField struct {
