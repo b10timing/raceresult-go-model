@@ -223,6 +223,7 @@ type Exporter struct {
 	IgnoreBefore       decimal.Decimal
 	IgnoreAfter        decimal.Decimal
 	Encoding           string
+	ConnectMsg         string
 	OrderPos           int
 }
 
