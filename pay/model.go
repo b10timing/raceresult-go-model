@@ -40,6 +40,7 @@ const (
 	PmMollieBancontact int = 35
 	PmPayTabs          int = 36
 	PmAsiaPay	   int = 37
+	PmMercadoPago      int = 38
 	PmCB               int = 99
 )
 
