@@ -658,6 +658,7 @@ const (
 
 type SaveValueArrayItem struct {
 	Bib       int
+	PID       int
 	FieldName string
 	Value     variant.Variant
 }
