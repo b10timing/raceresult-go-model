@@ -766,7 +766,6 @@ type RegistrationRequest struct {
 }
 
 type RegistrationRequestRecord struct {
-	Bib         int
 	PID         int
 	Record      variant.VariantMap
 	Expressions []string
