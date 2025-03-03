@@ -185,6 +185,12 @@ type Participant struct {
 	Language          string
 }
 
+// ParticipantNewResponse is the response to part/new?v2=true
+type ParticipantNewResponse struct {
+	ID  int
+	Bib int
+}
+
 // EntryFee describes the internal go model
 type EntryFee struct {
 	ID              int
