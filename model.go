@@ -682,6 +682,7 @@ type EntryFeeItem struct {
 type ImportResult struct {
 	Added   int
 	Updated int
+	PIDs    []int
 }
 
 type UserInfo struct {
