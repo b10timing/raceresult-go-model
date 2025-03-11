@@ -111,7 +111,7 @@ type CustomField struct {
 type CustomFieldValue struct {
 	ID      int
 	FieldID int
-	IDBib   int
+	PID     int
 	Value   string
 }
 
@@ -236,7 +236,7 @@ type Exporter struct {
 // History describes the internal go model
 type History struct {
 	ID               int
-	Bib              int
+	PID              int
 	DateTime         vbdate.VBDate
 	Field            int
 	OldValue         string
@@ -248,7 +248,7 @@ type History struct {
 
 // HistoryCount is the result of a history result query
 type HistoryCount struct {
-	IDBib int
+	PID   int
 	Count int
 }
 
@@ -268,7 +268,7 @@ type HistoryEntry struct {
 // Overwrite describes the internal go model
 type Overwrite struct {
 	ID       int
-	Bib      int
+	PID      int
 	ResultID int
 	Value    decimal.Decimal
 }
@@ -288,7 +288,7 @@ type Ranking struct {
 // RawData describes the internal go model
 type RawData struct {
 	ID          int
-	Bib         int
+	PID         int
 	TimingPoint string
 	Result      int
 	Time        decimal.Decimal
@@ -299,7 +299,7 @@ type RawData struct {
 // RawDataReduced describes the internal go model
 type RawDataReduced struct {
 	TimingPoint string
-	Bib         int
+	PID         int
 	Time        decimal.Decimal
 	Invalid     bool
 	OrderID     int
@@ -336,6 +336,7 @@ type RawDataFilter struct {
 // RawDataWithAdditionalFields describes the internal go model
 type RawDataWithAdditionalFields struct {
 	RawData
+	Bib    int
 	Fields variant.VariantMap `json:",omitempty"`
 }
 
@@ -486,7 +487,7 @@ type TeamScore struct {
 
 // Time describes the internal go model
 type Time struct {
-	Bib         int
+	PID         int
 	Result      int
 	DecimalTime decimal.Decimal
 	TimeText    string
