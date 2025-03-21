@@ -233,19 +233,6 @@ type Exporter struct {
 	OrderPos           int
 }
 
-// History describes the internal go model
-type History struct {
-	ID               int
-	PID              int
-	DateTime         vbdate.VBDate
-	Field            int
-	OldValue         string
-	NewValue         string
-	User             string
-	Application      string
-	DateTimeTZOffset int
-}
-
 // HistoryCount is the result of a history result query
 type HistoryCount struct {
 	PID   int
@@ -497,7 +484,6 @@ type Time struct {
 // TimingPointRule describes the internal go model
 type TimingPointRule struct {
 	ID          int
-	Group       string
 	DecoderID   string
 	DecoderName string
 	LoopID      byte

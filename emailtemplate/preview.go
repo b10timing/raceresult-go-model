@@ -40,6 +40,7 @@ type Preview struct {
 	Attachments []PreviewAttachment `json:",omitempty"`
 	Auth        string              `json:",omitempty"`
 	HTTPHeaders []HTTPHeader        `json:",omitempty"`
+	Error       string              `json:",omitempty"`
 }
 
 type PreviewAttachment struct {
