@@ -24,6 +24,7 @@ func (q *PreviewIDList) MarshalJSON() ([]byte, error) {
 }
 
 type Preview struct {
+	Type        Type
 	Bib         PreviewIDList
 	PID         PreviewIDList
 	Sender      string              `json:",omitempty"`
