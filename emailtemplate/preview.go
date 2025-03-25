@@ -39,7 +39,7 @@ type Preview struct {
 	Method      string              `json:",omitempty"`
 	Attachments []PreviewAttachment `json:",omitempty"`
 	HTTPHeaders []HTTPHeader        `json:",omitempty"`
-	Error       string              `json:",omitempty"`
+	Errors      []string            `json:",omitempty"`
 }
 
 type PreviewAttachment struct {
