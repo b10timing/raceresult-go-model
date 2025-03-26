@@ -25,8 +25,8 @@ func (q *PreviewIDList) MarshalJSON() ([]byte, error) {
 
 type Preview struct {
 	Type        Type
-	Bib         PreviewIDList
-	PID         PreviewIDList
+	Bibs        []int
+	PIDs        []int
 	Sender      string              `json:",omitempty"`
 	SenderName  string              `json:",omitempty"`
 	ReplyTo     string              `json:",omitempty"`
