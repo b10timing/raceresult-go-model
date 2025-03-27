@@ -45,7 +45,7 @@ func (s rDate) less(v Variant, _ *collate.Collator) bool {
 	case rString:
 		return s.toString() < string(val)
 	case rDate:
-		return time.Time(s).Before(time.Time(val))
+		return s.toDate().Before(val.toDate())
 	}
 	return vbdate.VBDate(s).Before(v.toDate())
 }
@@ -58,7 +58,7 @@ func (s rDate) greater(v Variant, _ *collate.Collator) bool {
 	case rString:
 		return string(val) < s.toString()
 	case rDate:
-		return time.Time(val).Before(time.Time(s))
+		return val.toDate().Before(s.toDate())
 	}
 	return v.toDate().Before(vbdate.VBDate(s))
 }
@@ -85,7 +85,7 @@ func (s rDate) toDate() vbdate.VBDate {
 }
 
 func (s rDate) toBool() bool {
-	return !time.Time(s).IsZero()
+	return !s.toDate().IsZero()
 }
 
 func (s rDate) toInt() int {
@@ -179,5 +179,5 @@ func (s rDate) toJSON() []byte {
 	if s.isZero() {
 		return []byte("\"\"")
 	}
-	return []byte("\"" + time.Time(s).Format(time.RFC3339) + "\"")
+	return []byte("\"" + s.toDate().ToString() + "\"")
 }

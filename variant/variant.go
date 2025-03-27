@@ -1,8 +1,6 @@
 package variant
 
 import (
-	"time"
-
 	"github.com/raceresult/go-model/decimal"
 	"github.com/raceresult/go-model/vbdate"
 	"golang.org/x/text/collate"
@@ -89,9 +87,10 @@ func ToVariant(i interface{}) Variant {
 	case int:
 		return RInt(v)
 	case string:
-		if (len(v) == 25 || len(v) == 20) && v[4] == '-' && v[7] == '-' {
-			if t, err := time.Parse(time.RFC3339, v); err == nil {
-				return RDate(vbdate.VBDate(t))
+		l := len(v)
+		if (l == 25 || l == 20 || l == 19 || l == 10) && v[4] == '-' && v[7] == '-' {
+			if v, ok := vbdate.Parse(v); ok {
+				return RDate(v)
 			}
 		}
 		return RString(v)
