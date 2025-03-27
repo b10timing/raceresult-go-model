@@ -174,6 +174,9 @@ func (s VBDate) WithTimezone(tz *time.Location) VBDate {
 	if s.IsZero() {
 		return s
 	}
+	if s.hasZone {
+		return FromTime(s.Time.In(tz), true)
+	}
 	return VBDate{
 		Time:    time.Date(s.Year(), s.Month(), s.Day(), s.Hour(), s.Minute(), s.Second(), s.Nanosecond(), tz),
 		hasZone: true,
