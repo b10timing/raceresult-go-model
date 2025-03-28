@@ -16,7 +16,8 @@ import (
 // indicate days earlier than some mark.
 type PeriodOfDays int32
 
-var ZeroDate = MustParseISO("0000-01-01")
+var ZeroDate = New(1, 1, 1)
+var ZeroDateVB = New(1899, 12, 30)
 
 // ZeroDays is the named zero value for PeriodOfDays.
 const ZeroDays PeriodOfDays = 0
@@ -192,7 +193,7 @@ func (d Date) ISOWeek() (year, week int) {
 
 // IsZero
 func (d Date) IsZero() bool {
-	return !d.isDefined || d.day == ZeroDate.day
+	return !d.isDefined || d.day == ZeroDate.day || d.day == ZeroDateVB.day
 }
 
 // Equal reports whether d and u represent the same date.
