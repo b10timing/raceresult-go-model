@@ -117,7 +117,6 @@ type CustomFieldValue struct {
 }
 
 // Participant describes the internal go model
-// NOTE (SaschaV): On DB site this is located at data
 type Participant struct {
 	Bib               int
 	Transponder1      string
@@ -162,8 +161,6 @@ type Participant struct {
 	OPEntryFee        decimal.Decimal
 	OPUserFee         decimal.Decimal
 	OPPaymentFee      decimal.Decimal
-	OPReceivedAmount  decimal.Decimal
-	OPReceivedDate    vbdate.VBDate
 	OPCurrency        string
 	OPToPay           decimal.Decimal
 	OPBalance         decimal.Decimal
