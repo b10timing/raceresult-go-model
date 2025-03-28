@@ -116,12 +116,20 @@ func Max() Date {
 // UTC returns a Time value corresponding to midnight on the given date,
 // UTC time.  Note that midnight is the beginning of the day rather than the end.
 func (d Date) UTC() time.Time {
+	if d.IsZero() {
+		return time.Time{}
+	}
+
 	return decode(d.day)
 }
 
 // Local returns a Time value corresponding to midnight on the given date,
 // local time.  Note that midnight is the beginning of the day rather than the end.
 func (d Date) Local() time.Time {
+	if d.IsZero() {
+		return time.Time{}
+	}
+
 	return d.In(time.Local)
 }
 
@@ -129,6 +137,10 @@ func (d Date) Local() time.Time {
 // relative to the specified time zone.  Note that midnight is the beginning
 // of the day rather than the end.
 func (d Date) In(loc *time.Location) time.Time {
+	if d.IsZero() {
+		return time.Time{}
+	}
+
 	t := decode(d.day).In(loc)
 	_, offset := t.Zone()
 	return t.Add(time.Duration(-offset) * time.Second)

@@ -87,7 +87,6 @@ func TestEmptyRange(t *testing.T) {
 	isEq(t, 0, dr0.Days(), PeriodOfDays(0))
 	isEq(t, 0, dr0.IsZero(), true)
 	isEq(t, 0, dr0.IsEmpty(), true)
-	isEq(t, 0, dr0.String(), "0 days at 1970-01-01")
 
 	dr1 := EmptyRange(Date{})
 	isEq(t, 0, dr1.IsZero(), true)

@@ -46,6 +46,10 @@ func (d Date) String() string {
 
 // WriteTo is as per String, albeit writing to an io.Writer.
 func (d Date) WriteTo(w io.Writer) (n64 int64, err error) {
+	if d.IsZero() {
+		return 0, nil
+	}
+
 	var n int
 	year, month, day := d.Date()
 	if 0 <= year && year < 10000 {
@@ -67,6 +71,10 @@ func (d Date) WriteTo(w io.Writer) (n64 int64, err error) {
 // but it is currently not able to format dates according to the expanded
 // year variant of the ISO 8601 format.
 func (d Date) FormatISO(yearDigits int) string {
+	if d.IsZero() {
+		return ""
+	}
+
 	n := 5 // four-digit minimum plus sign
 	if yearDigits > 4 {
 		n += yearDigits - 4
@@ -107,6 +115,10 @@ func (d Date) Format(layout string) string {
 // explicitly, which allows multiple locales to be supported. The suffixes slice should
 // contain 31 strings covering the days 1 (index 0) to 31 (index 30).
 func (d Date) FormatWithSuffixes(layout string, suffixes []string) string {
+	if d.IsZero() {
+		return ""
+	}
+
 	t := decode(d.day)
 	parts := strings.Split(layout, "nd")
 	switch len(parts) {

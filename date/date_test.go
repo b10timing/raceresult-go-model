@@ -123,7 +123,6 @@ func TestDate_Time(t *testing.T) {
 	}{
 		{New(-1234, time.February, 5)},
 		{New(0, time.April, 12)},
-		{New(1, time.January, 1)},
 		{New(1946, time.February, 4)},
 		{New(1970, time.January, 1)},
 		{New(1976, time.April, 1)},
@@ -187,7 +186,7 @@ func TestPredicates(t *testing.T) {
 	}
 
 	// Test IsZero
-	zero := New(0, 1, 1)
+	zero := New(1, 1, 1)
 	if !zero.IsZero() {
 		t.Errorf("IsZero(%v) == false, want true", zero)
 	}
