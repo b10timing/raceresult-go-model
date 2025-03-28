@@ -1,6 +1,8 @@
 package archives
 
-import "github.com/raceresult/go-model/vbdate"
+import (
+	"github.com/raceresult/go-model/date"
+)
 
 type Participant struct {
 	ID             int
@@ -12,7 +14,7 @@ type Participant struct {
 	Lastname       string                 `json:",omitempty"`
 	Firstname      string                 `json:",omitempty"`
 	Sex            string                 `json:",omitempty"`
-	DateOfBirth    vbdate.VBDate          `json:",omitempty"`
+	DateOfBirth    date.Date              `json:",omitempty"`
 	Street         string                 `json:",omitempty"`
 	ZIP            string                 `json:",omitempty"`
 	State          string                 `json:",omitempty"`
@@ -41,7 +43,7 @@ type Participation struct {
 type Event struct {
 	ID       string
 	Name     string
-	Date     vbdate.VBDate
+	Date     date.Date
 	Contests []Contest
 }
 
@@ -51,7 +53,7 @@ type Contest struct {
 }
 
 type ParticipationExt struct {
-	EventDate   vbdate.VBDate
+	EventDate   date.Date
 	EventName   string
 	ContestName string
 	FinalTime   string
