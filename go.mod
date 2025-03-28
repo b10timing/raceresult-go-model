@@ -3,6 +3,9 @@ module github.com/raceresult/go-model
 go 1.16
 
 require (
-	github.com/stretchr/testify v1.7.0
-	golang.org/x/text v0.3.7
+	github.com/onsi/gomega v1.33.1
+	github.com/rickb777/plural v1.4.2
+	github.com/stretchr/testify v1.8.4
+	golang.org/x/net v0.27.0 // indirect
+	golang.org/x/text v0.16.0
 )

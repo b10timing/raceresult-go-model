@@ -1,15 +1,15 @@
 package portal
 
 import (
+	"github.com/raceresult/go-model/date"
 	"time"
 
 	"github.com/raceresult/go-model/decimal"
-	"github.com/raceresult/go-model/vbdate"
 )
 
 type RegistrationContestEntryFee struct {
-	DateStart vbdate.VBDate
-	DateEnd   vbdate.VBDate
+	DateStart date.Date
+	DateEnd   date.Date
 	RegStart  time.Time
 	RegEnd    time.Time
 	Fee       decimal.Decimal
@@ -23,8 +23,8 @@ type RegistrationContest struct {
 	Start       time.Time
 	Name        string
 	Sex         string
-	AgeStart    vbdate.VBDate
-	AgeEnd      vbdate.VBDate
+	AgeStart    date.Date
+	AgeEnd      date.Date
 	EntryFees   []RegistrationContestEntryFee
 	SlotsLeft   int
 }

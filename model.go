@@ -3,6 +3,7 @@ package sesbase
 import (
 	"time"
 
+	"github.com/raceresult/go-model/date"
 	"github.com/raceresult/go-model/decimal"
 	"github.com/raceresult/go-model/variant"
 	"github.com/raceresult/go-model/vbdate"
@@ -13,8 +14,8 @@ type AgeGroup struct {
 	ID        int
 	Name      string
 	NameShort string
-	DateStart vbdate.VBDate
-	DateEnd   vbdate.VBDate
+	DateStart date.Date
+	DateEnd   date.Date
 	AgeFrom   int
 	AgeTo     int
 	Contest   int
@@ -40,8 +41,8 @@ type Contest struct {
 	ID               int
 	Name             string
 	NameShort        string
-	AgeStart         vbdate.VBDate
-	AgeEnd           vbdate.VBDate
+	AgeStart         date.Date
+	AgeEnd           date.Date
 	Sex              string
 	Day              int
 	StartTime        decimal.Decimal
@@ -196,10 +197,10 @@ type EntryFee struct {
 	ID              int
 	Name            string
 	Contest         int
-	DateStart       vbdate.VBDate
-	DateEnd         vbdate.VBDate
-	RegStart        vbdate.VBDate
-	RegEnd          vbdate.VBDate
+	DateStart       date.Date
+	DateEnd         date.Date
+	RegStart        date.Date
+	RegEnd          date.Date
 	Field           string
 	Operator        string
 	Value           string
