@@ -6,33 +6,7 @@ package date
 
 import (
 	"bytes"
-	"errors"
 )
-
-// MarshalBinary implements the encoding.BinaryMarshaler interface.
-func (d Date) MarshalBinary() ([]byte, error) {
-	enc := []byte{
-		byte(d.day >> 24),
-		byte(d.day >> 16),
-		byte(d.day >> 8),
-		byte(d.day),
-	}
-	return enc, nil
-}
-
-// UnmarshalBinary implements the encoding.BinaryUnmarshaler interface.
-func (d *Date) UnmarshalBinary(data []byte) error {
-	if len(data) == 0 {
-		return errors.New("Date.UnmarshalBinary: no data")
-	}
-	if len(data) != 4 {
-		return errors.New("Date.UnmarshalBinary: invalid length")
-	}
-
-	d.day = PeriodOfDays(data[3]) | PeriodOfDays(data[2])<<8 | PeriodOfDays(data[1])<<16 | PeriodOfDays(data[0])<<24
-
-	return nil
-}
 
 // MarshalJSON implements the json.Marshaler interface.
 // The date is given in ISO 8601 extended format (e.g. "2006-01-02").

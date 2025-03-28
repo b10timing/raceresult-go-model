@@ -108,56 +108,9 @@ func (d Date) FormatISO(yearDigits int) string {
 // This function cannot currently format Date values according to the expanded
 // year variant of ISO 8601; you should use Date.FormatISO to that effect.
 func (d Date) Format(layout string) string {
-	return d.FormatWithSuffixes(layout, DaySuffixes)
-}
-
-// FormatWithSuffixes is the same as Format, except the suffix strings can be specified
-// explicitly, which allows multiple locales to be supported. The suffixes slice should
-// contain 31 strings covering the days 1 (index 0) to 31 (index 30).
-func (d Date) FormatWithSuffixes(layout string, suffixes []string) string {
 	if d.IsZero() {
 		return ""
 	}
 
-	t := decode(d.day)
-	parts := strings.Split(layout, "nd")
-	switch len(parts) {
-	case 1:
-		return t.Format(layout)
-
-	default:
-		// If the format contains "Monday", it has been split so repair it.
-		i := 1
-		for i < len(parts) {
-			if i > 0 && strings.HasSuffix(parts[i-1], "Mo") && strings.HasPrefix(parts[i], "ay") {
-				parts[i-1] = parts[i-1] + "nd" + parts[i]
-				copy(parts[i:], parts[i+1:])
-				parts = parts[:len(parts)-1]
-			} else {
-				i++
-			}
-		}
-		a := make([]string, 0, 2*len(parts)-1)
-		for i, p := range parts {
-			if i > 0 {
-				a = append(a, suffixes[d.Day()-1])
-			}
-			a = append(a, t.Format(p))
-		}
-		return strings.Join(a, "")
-	}
-}
-
-// DaySuffixes is the default array of strings used as suffixes when a format string
-// contains "nd" (as in "second"). This can be altered at startup in order to change
-// the default locale strings used for formatting dates. It supports every locale that
-// uses the Gregorian calendar and has a suffix after the day-of-month number.
-var DaySuffixes = []string{
-	"st", "nd", "rd", "th", "th", // 1 - 5
-	"th", "th", "th", "th", "th", // 6 - 10
-	"th", "th", "th", "th", "th", // 11 - 15
-	"th", "th", "th", "th", "th", // 16 - 20
-	"st", "nd", "rd", "th", "th", // 21 - 25
-	"th", "th", "th", "th", "th", // 26 - 30
-	"st", // 31
+	return decode(d.day).Format(layout)
 }
