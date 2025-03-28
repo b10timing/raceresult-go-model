@@ -127,7 +127,7 @@ type Participant struct {
 	Lastname          string
 	Firstname         string
 	Sex               string
-	DateOfBirth       vbdate.VBDate
+	DateOfBirth       date.Date
 	Street            string
 	ZIP               string
 	City              string
