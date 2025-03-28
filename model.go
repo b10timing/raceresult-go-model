@@ -118,6 +118,7 @@ type CustomFieldValue struct {
 
 // Participant describes the internal go model
 type Participant struct {
+	ID                int
 	Bib               int
 	Transponder1      string
 	Transponder2      string
@@ -130,10 +131,12 @@ type Participant struct {
 	Street            string
 	ZIP               string
 	City              string
+	State2            string
 	Country           string
 	Nation            string
 	AgeGroup1         int
 	AgeGroup2         int
+	AgeGroup3         int
 	Club              string
 	Contest           int
 	Status            int
@@ -147,14 +150,19 @@ type Participant struct {
 	BranchNo          string
 	Bankname          string
 	AccountOwner      string
+	IBAN              string
+	BIC               string
+	SEPAMandate       string
 	Comment           string
 	Created           vbdate.VBDate
 	Modified          vbdate.VBDate
 	Uploaded          vbdate.VBDate
+	CreatedTZOffset   int
+	ModifiedTZOffset  int
+	CreatedBy         string
 	ForeignID         int
 	RecordPayGUID     string
 	ActivationEventID string
-	ID                int
 	OPID              int
 	OPMethod          int
 	OPStatus          int
@@ -165,21 +173,13 @@ type Participant struct {
 	OPToPay           decimal.Decimal
 	OPBalance         decimal.Decimal
 	OPBalanceDate     vbdate.VBDate
-	IBAN              string
-	BIC               string
+	OPReference       string
 	License           string
 	ShowUnderscores   bool
 	GroupRegPos       int
-	CreatedBy         string
-	SEPAMandate       string
-	OPReference       string
-	AgeGroup3         int
-	Password          string
 	GroupID           int
+	Password          string
 	Voucher           string
-	CreatedTZOffset   int
-	ModifiedTZOffset  int
-	State2            string
 	Language          string
 }
 
