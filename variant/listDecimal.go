@@ -48,11 +48,11 @@ func (s DecimalList) ToFloat64() Float64List {
 	return r
 }
 
-// ToDate converts the list into a DateList
-func (s DecimalList) ToDate() DateList {
-	r := NewDateList(len(s))
+// ToDateTime converts the list into a DateTimeList
+func (s DecimalList) ToDateTime() DateTimeList {
+	r := NewDateTimeList(len(s))
 	for i, v := range s {
-		r[i] = RDecimal(v).toDate()
+		r[i] = RDecimal(v).toDateTime()
 	}
 	return r
 }
@@ -115,7 +115,7 @@ func (s DecimalList) Plus(p RList) RList {
 		return s
 	case Float64List:
 		return s.ToFloat64().Plus(p)
-	case BoolList, IntList, DateList:
+	case BoolList, IntList, DateTimeList:
 		return s.Plus(v.ToDecimal())
 	case StringList:
 		result := NewVariantList(len(s))
@@ -144,7 +144,7 @@ func (s DecimalList) Minus(p RList) RList {
 		return s
 	case Float64List:
 		return s.ToFloat64().Minus(p)
-	case IntList, BoolList, DateList:
+	case IntList, BoolList, DateTimeList:
 		return s.Minus(v.ToDecimal())
 	case StringList:
 		result := NewVariantList(len(s))
@@ -173,7 +173,7 @@ func (s DecimalList) Mult(p RList) RList {
 		return s
 	case Float64List:
 		return s.ToFloat64().Mult(p)
-	case IntList, BoolList, DateList:
+	case IntList, BoolList, DateTimeList:
 		return s.Mult(v.ToDecimal())
 	case StringList:
 		result := NewVariantList(len(s))
@@ -204,7 +204,7 @@ func (s DecimalList) Div(p RList) RList {
 			result[i] = s[i].Div(v[i])
 		}
 		return result
-	case IntList, BoolList, DateList:
+	case IntList, BoolList, DateTimeList:
 		return s.Div(v.ToFloat64())
 	case DecimalList:
 		result := NewVariantList(len(s))
@@ -245,7 +245,7 @@ func (s DecimalList) DivInt(p RList) RList {
 			s[i] = decimal.Decimals * x
 		}
 		return s
-	case IntList, BoolList, DateList, Float64List:
+	case IntList, BoolList, DateTimeList, Float64List:
 		return s.DivInt(v.ToDecimal())
 	case StringList:
 		result := NewVariantList(len(s))
@@ -279,7 +279,7 @@ func (s DecimalList) Mod(p RList) RList {
 			s[i] %= v[i]
 		}
 		return s
-	case IntList, BoolList, DateList, Float64List:
+	case IntList, BoolList, DateTimeList, Float64List:
 		return s.Mod(v.ToDecimal())
 	case StringList:
 		result := NewVariantList(len(s))

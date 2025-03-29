@@ -1,14 +1,14 @@
 package kiosk
 
-import "github.com/raceresult/go-model/vbdate"
+import "github.com/raceresult/go-model/datetime"
 
 // Kiosk represents all settings of a kiosk
 type Kiosk struct {
 	Name                 string
 	Key                  string
 	Enabled              bool
-	EnabledFrom          vbdate.VBDate
-	EnabledTo            vbdate.VBDate
+	EnabledFrom          datetime.DateTime
+	EnabledTo            datetime.DateTime
 	TransponderMode      int
 	AcceptedTransponders int
 	AutoFinish           bool

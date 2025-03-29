@@ -1,7 +1,7 @@
 package presenter
 
 import (
-	"github.com/raceresult/go-model/vbdate"
+	"github.com/raceresult/go-model/datetime"
 )
 
 // Presenter represents all settings of a Presenter screen
@@ -10,8 +10,8 @@ type Presenter struct {
 	Key          string
 	Title        string
 	Enabled      bool
-	EnabledFrom  vbdate.VBDate
-	EnabledTo    vbdate.VBDate
+	EnabledFrom  datetime.DateTime
+	EnabledTo    datetime.DateTime
 	SwitchMode   string
 	AutoHideTabs bool
 	Screens      []Screen

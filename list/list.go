@@ -1,9 +1,9 @@
 package list
 
 import (
+	"github.com/raceresult/go-model/datetime"
 	"github.com/raceresult/go-model/decimal"
 	"github.com/raceresult/go-model/page"
-	"github.com/raceresult/go-model/vbdate"
 )
 
 // List represents the settings of a list
@@ -77,7 +77,7 @@ type List struct {
 	ListHeaderFooterFontUnderlined bool
 	ListHeaderFooterAlignment      int
 	Remarks                        string
-	LastChange                     vbdate.VBDate
+	LastChange                     datetime.DateTime
 	FooterText1                    string
 	FooterText2                    string
 	FooterText3                    string

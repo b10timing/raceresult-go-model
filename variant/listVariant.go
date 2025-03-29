@@ -1,6 +1,7 @@
 package variant
 
 // VariantList is a slice of Variants
+//
 //goland:noinspection GoNameStartsWithPackageName
 type VariantList []Variant
 
@@ -45,11 +46,11 @@ func (s VariantList) ToFloat64() Float64List {
 	return r
 }
 
-// ToDate converts the list into a DateList
-func (s VariantList) ToDate() DateList {
-	r := NewDateList(len(s))
+// ToDateTime converts the list into a DateTimeList
+func (s VariantList) ToDateTime() DateTimeList {
+	r := NewDateTimeList(len(s))
 	for i, v := range s {
-		r[i] = ToDate(v)
+		r[i] = ToDateTime(v)
 	}
 	return r
 }

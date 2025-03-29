@@ -1,8 +1,8 @@
 package variant
 
 import (
+	"github.com/raceresult/go-model/datetime"
 	"github.com/raceresult/go-model/decimal"
-	"github.com/raceresult/go-model/vbdate"
 	"golang.org/x/text/collate"
 )
 
@@ -35,8 +35,8 @@ type Variant interface {
 	// ToString converts the value to string with a given date format
 	toStringWithDateFormat(df string) string
 
-	// ToTime converts the value to to time.Time.
-	toDate() vbdate.VBDate
+	// ToDateTime converts the value to DateTime.
+	toDateTime() datetime.DateTime
 
 	// ToBool converts the value to bool.
 	toBool() bool
@@ -89,8 +89,8 @@ func ToVariant(i interface{}) Variant {
 	case string:
 		l := len(v)
 		if (l == 25 || l == 20 || l == 19 || l == 10) && v[4] == '-' && v[7] == '-' {
-			if v, ok := vbdate.Parse(v); ok {
-				return RDate(v)
+			if v, ok := datetime.Parse(v); ok {
+				return RDateTime(v)
 			}
 		}
 		return RString(v)
@@ -103,7 +103,7 @@ func ToVariant(i interface{}) Variant {
 	}
 }
 
-// ToInterface returns the underlying string/int/bool/date/decimal value
+// ToInterface returns the underlying string/int/bool/datetime/decimal value
 func ToInterface(v Variant) interface{} {
 	if v == nil {
 		return nil
@@ -119,8 +119,8 @@ func ToInterface(v Variant) interface{} {
 		return v.toFloat64()
 	case TypeRDecimal:
 		return v.toDecimal()
-	case TypeRDate:
-		return v.toDate()
+	case TypeRDateTime:
+		return v.toDateTime()
 	default:
 		panic("new variant type not implemented")
 	}

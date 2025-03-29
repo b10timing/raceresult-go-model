@@ -36,11 +36,11 @@ func (s StringList) ToFloat64() Float64List {
 	return r
 }
 
-// ToDate converts the list into a DateList
-func (s StringList) ToDate() DateList {
-	r := NewDateList(len(s))
+// ToDateTime converts the list into a DateTimeList
+func (s StringList) ToDateTime() DateTimeList {
+	r := NewDateTimeList(len(s))
 	for i, v := range s {
-		r[i] = rString(v).toDate()
+		r[i] = rString(v).toDateTime()
 	}
 	return r
 }

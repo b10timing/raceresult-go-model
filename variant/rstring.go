@@ -2,13 +2,11 @@ package variant
 
 import (
 	"encoding/json"
+	"github.com/raceresult/go-model/datetime"
+	"github.com/raceresult/go-model/decimal"
+	"golang.org/x/text/collate"
 	"strconv"
 	"strings"
-
-	"golang.org/x/text/collate"
-
-	"github.com/raceresult/go-model/decimal"
-	"github.com/raceresult/go-model/vbdate"
 )
 
 // RString creates a string variant type.
@@ -95,11 +93,11 @@ func (s rString) toStringWithDateFormat(string) string {
 	return s.toString()
 }
 
-func (s rString) toDate() vbdate.VBDate {
-	if d, ok := vbdate.Parse(string(s)); ok {
+func (s rString) toDateTime() datetime.DateTime {
+	if d, ok := datetime.Parse(string(s)); ok {
 		return d
 	}
-	return vbdate.ZeroDate()
+	return datetime.ZeroDate()
 }
 
 func (s rString) toBool() bool {

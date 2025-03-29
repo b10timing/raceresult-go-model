@@ -4,9 +4,9 @@ import (
 	"time"
 
 	"github.com/raceresult/go-model/date"
+	"github.com/raceresult/go-model/datetime"
 	"github.com/raceresult/go-model/decimal"
 	"github.com/raceresult/go-model/variant"
-	"github.com/raceresult/go-model/vbdate"
 )
 
 // AgeGroup describes the internal go model
@@ -154,9 +154,9 @@ type Participant struct {
 	BIC               string
 	SEPAMandate       string
 	Comment           string
-	Created           vbdate.VBDate
-	Modified          vbdate.VBDate
-	Uploaded          vbdate.VBDate
+	Created           datetime.DateTime
+	Modified          datetime.DateTime
+	Uploaded          datetime.DateTime
 	CreatedTZOffset   int
 	ModifiedTZOffset  int
 	CreatedBy         string
@@ -172,7 +172,7 @@ type Participant struct {
 	OPCurrency        string
 	OPToPay           decimal.Decimal
 	OPBalance         decimal.Decimal
-	OPBalanceDate     vbdate.VBDate
+	OPBalanceDate     datetime.DateTime
 	OPReference       string
 	License           string
 	ShowUnderscores   bool
@@ -518,7 +518,7 @@ type Setting struct {
 	ValString       string
 	ValMemo         string
 	ValBoolean      bool
-	ValDate         vbdate.VBDate
+	ValDate         datetime.DateTime
 	RandomVersionID int
 }
 
@@ -546,8 +546,8 @@ type Voucher struct {
 	Tax        decimal.Decimal
 	Contest    int
 	Category   string
-	ValidUntil vbdate.VBDate
-	ValidFrom  vbdate.VBDate
+	ValidUntil datetime.DateTime
+	ValidFrom  datetime.DateTime
 	Reusable   int
 	UseCounter int
 	Remark     string

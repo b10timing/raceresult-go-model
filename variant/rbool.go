@@ -1,8 +1,8 @@
 package variant
 
 import (
+	"github.com/raceresult/go-model/datetime"
 	"github.com/raceresult/go-model/decimal"
-	"github.com/raceresult/go-model/vbdate"
 	"golang.org/x/text/collate"
 
 	"time"
@@ -35,8 +35,8 @@ func (s rBool) less(v Variant, _ *collate.Collator) bool {
 	switch val := v.(type) {
 	case rString:
 		return s.toString() < string(val)
-	case rDate:
-		return s.toDate().Before(vbdate.VBDate(val))
+	case rDateTime:
+		return s.toDateTime().Before(datetime.DateTime(val))
 	case rDecimal:
 		return s.toDecimal() < decimal.Decimal(val)
 	case rFloat:
@@ -56,8 +56,8 @@ func (s rBool) greater(v Variant, _ *collate.Collator) bool {
 	switch val := v.(type) {
 	case rString:
 		return string(val) < s.toString()
-	case rDate:
-		return vbdate.VBDate(val).Before(s.toDate())
+	case rDateTime:
+		return datetime.DateTime(val).Before(s.toDateTime())
 	case rDecimal:
 		return decimal.Decimal(val) < s.toDecimal()
 	case rFloat:
@@ -89,11 +89,11 @@ func (s rBool) toStringWithDateFormat(string) string {
 	return s.toString()
 }
 
-func (s rBool) toDate() vbdate.VBDate {
+func (s rBool) toDateTime() datetime.DateTime {
 	if s {
-		return vbdate.ZeroDate().Add(24 * time.Hour)
+		return datetime.ZeroDate().Add(24 * time.Hour)
 	}
-	return vbdate.ZeroDate()
+	return datetime.ZeroDate()
 }
 
 func (s rBool) toBool() bool {

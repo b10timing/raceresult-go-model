@@ -1,16 +1,12 @@
 package variant
 
 import (
+	"github.com/raceresult/go-model/datetime"
 	"github.com/raceresult/go-model/decimal"
-	"github.com/raceresult/go-model/vbdate"
-
+	"github.com/stretchr/testify/assert"
 	"golang.org/x/text/collate"
 	"golang.org/x/text/language"
-
 	"testing"
-	"time"
-
-	"github.com/stretchr/testify/assert"
 )
 
 var compareCases = []struct { //nolint:maligned
@@ -58,12 +54,12 @@ var compareCases = []struct { //nolint:maligned
 	},
 	{
 		name:   "zero date and nil",
-		v1:     rDate(vbdate.ZeroDate()),
+		v1:     rDateTime(datetime.ZeroDate()),
 		equals: true,
 	},
 	{
 		name:   "zero date and nil",
-		v1:     rDate(vbdate.ZeroDate()),
+		v1:     rDateTime(datetime.ZeroDate()),
 		equals: true,
 	},
 	{
@@ -116,7 +112,7 @@ var compareCases = []struct { //nolint:maligned
 	{
 		name:   "string equals date",
 		v1:     RString("2009-03-05"),
-		v2:     rDate(time.Date(2009, 3, 5, 0, 0, 0, 0, time.UTC)),
+		v2:     rDateTime(datetime.New(2009, 3, 5, 0, 0, 0)),
 		equals: true,
 	},
 	{

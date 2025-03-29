@@ -1,7 +1,7 @@
 package registration
 
 import (
-	"github.com/raceresult/go-model/vbdate"
+	"github.com/raceresult/go-model/datetime"
 )
 
 type Registration struct {
@@ -10,8 +10,8 @@ type Registration struct {
 	ChangeKeySalt                              string
 	Title                                      string
 	Enabled                                    bool
-	EnabledFrom                                vbdate.VBDate
-	EnabledTo                                  vbdate.VBDate
+	EnabledFrom                                datetime.DateTime
+	EnabledTo                                  datetime.DateTime
 	TestModeKey                                string
 	Type                                       string
 	GroupMin, GroupMax, GroupDefault, GroupInc int
@@ -36,8 +36,8 @@ type Step struct {
 	ID          int
 	Title       string
 	Enabled     bool
-	EnabledFrom vbdate.VBDate
-	EnabledTo   vbdate.VBDate
+	EnabledFrom datetime.DateTime
+	EnabledTo   datetime.DateTime
 	Elements    []Element
 	ButtonText  string
 }
@@ -46,8 +46,8 @@ type Element struct {
 	Type            string // text, box, field, entryfee list, ...
 	Label           string
 	Enabled         bool
-	EnabledFrom     vbdate.VBDate
-	EnabledTo       vbdate.VBDate
+	EnabledFrom     datetime.DateTime
+	EnabledTo       datetime.DateTime
 	Field           *Field
 	ShowIf          string
 	ShowIfMode      int
@@ -87,8 +87,8 @@ type Value struct {
 	Value       interface{}
 	Label       string
 	Enabled     bool
-	EnabledFrom vbdate.VBDate
-	EnabledTo   vbdate.VBDate
+	EnabledFrom datetime.DateTime
+	EnabledTo   datetime.DateTime
 	MaxCapacity int
 	ShowIf      string
 }
@@ -118,8 +118,8 @@ type PaymentMethod struct {
 	ID          int
 	Label       string
 	Enabled     bool
-	EnabledFrom vbdate.VBDate
-	EnabledTo   vbdate.VBDate
+	EnabledFrom datetime.DateTime
+	EnabledTo   datetime.DateTime
 	Filter      string
 }
 

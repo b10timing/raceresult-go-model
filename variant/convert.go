@@ -2,8 +2,8 @@ package variant
 
 import (
 	"errors"
+	"github.com/raceresult/go-model/datetime"
 	"github.com/raceresult/go-model/decimal"
-	"github.com/raceresult/go-model/vbdate"
 	"strconv"
 	"strings"
 )
@@ -56,12 +56,12 @@ func ToDecimal(value Variant) decimal.Decimal {
 	return value.toDecimal()
 }
 
-// ToDate converts a variant to VBDate.
-func ToDate(value Variant) vbdate.VBDate {
+// ToDateTime converts a variant to DateTime.
+func ToDateTime(value Variant) datetime.DateTime {
 	if value == nil {
-		return vbdate.ZeroDate()
+		return datetime.ZeroDate()
 	}
-	return value.toDate()
+	return value.toDateTime()
 }
 
 // ParseNumber parses a number to int, float or decimal

@@ -1,11 +1,10 @@
 package variant
 
 import (
+	"github.com/raceresult/go-model/datetime"
 	"github.com/raceresult/go-model/decimal"
-	"github.com/raceresult/go-model/vbdate"
 	"golang.org/x/text/collate"
 	"math"
-
 	"strconv"
 )
 
@@ -31,8 +30,8 @@ func (s rInt) equals(v Variant, _ bool) bool {
 		return s.toBool() == bool(val)
 	case rString:
 		return s.toString() == string(val)
-	case rDate:
-		return s.toDate() == vbdate.VBDate(val)
+	case rDateTime:
+		return s.toDateTime() == datetime.DateTime(val)
 	case rDecimal:
 		return s.toDecimal() == decimal.Decimal(val)
 	case rFloat:
@@ -48,8 +47,8 @@ func (s rInt) less(v Variant, _ *collate.Collator) bool {
 	switch val := v.(type) {
 	case rString:
 		return s.toString() < string(val)
-	case rDate:
-		return s.toDate().Before(vbdate.VBDate(val))
+	case rDateTime:
+		return s.toDateTime().Before(datetime.DateTime(val))
 	case rDecimal:
 		return s.toDecimal() < decimal.Decimal(val)
 	case rFloat:
@@ -67,8 +66,8 @@ func (s rInt) greater(v Variant, _ *collate.Collator) bool {
 	switch val := v.(type) {
 	case rString:
 		return s.toString() > string(val)
-	case rDate:
-		return vbdate.VBDate(val).Before(s.toDate())
+	case rDateTime:
+		return datetime.DateTime(val).Before(s.toDateTime())
 	case rDecimal:
 		return decimal.Decimal(val) < s.toDecimal()
 	case rFloat:
@@ -91,8 +90,8 @@ func (s rInt) toStringWithDateFormat(string) string {
 	return s.toString()
 }
 
-func (s rInt) toDate() vbdate.VBDate {
-	return vbdate.ZeroDate().AddDate(0, 0, int(s))
+func (s rInt) toDateTime() datetime.DateTime {
+	return datetime.ZeroDate().AddDate(0, 0, int(s))
 }
 
 func (s rInt) toBool() bool {
@@ -123,7 +122,7 @@ func (s rInt) plus(p Variant) Variant {
 		return rInt(int(s) + p.toInt())
 	case TypeRDecimal:
 		return rDecimal(s.toDecimal()).plus(p)
-	case TypeRDate, TypeRFloat, TypeRString:
+	case TypeRDateTime, TypeRFloat, TypeRString:
 		return rFloat(s.toFloat64()).plus(p)
 	default:
 		return nil
@@ -136,7 +135,7 @@ func (s rInt) minus(p Variant) Variant {
 		return rInt(int(s) - p.toInt())
 	case TypeRDecimal:
 		return rDecimal(s.toDecimal()).minus(p)
-	case TypeRDate, TypeRFloat, TypeRString:
+	case TypeRDateTime, TypeRFloat, TypeRString:
 		return rFloat(s.toFloat64()).minus(p)
 	default:
 		return nil
@@ -149,7 +148,7 @@ func (s rInt) mult(p Variant) Variant {
 		return rInt(int(s) * p.toInt())
 	case TypeRDecimal:
 		return rDecimal(s.toDecimal()).mult(p)
-	case TypeRDate, TypeRFloat, TypeRString:
+	case TypeRDateTime, TypeRFloat, TypeRString:
 		return rFloat(s.toFloat64()).mult(p)
 	default:
 		return nil
@@ -166,7 +165,7 @@ func (s rInt) div(p Variant) Variant {
 		return rFloat(float64(s) / float64(x))
 	case TypeRDecimal:
 		return rDecimal(s.toDecimal()).div(p)
-	case TypeRDate, TypeRFloat, TypeRString:
+	case TypeRDateTime, TypeRFloat, TypeRString:
 		return rFloat(s.toFloat64()).div(p)
 	default:
 		return nil
@@ -183,7 +182,7 @@ func (s rInt) divInt(p Variant) Variant {
 		return rInt(int(s) / x)
 	case TypeRDecimal:
 		return rDecimal(s.toDecimal()).divInt(p)
-	case TypeRDate, TypeRFloat, TypeRString:
+	case TypeRDateTime, TypeRFloat, TypeRString:
 		return rFloat(s.toFloat64()).divInt(p)
 	default:
 		return nil
@@ -204,7 +203,7 @@ func (s rInt) exp(p Variant) Variant {
 		return RInt(int(math.Pow(s.toFloat64(), p.toFloat64())))
 	case TypeRDecimal:
 		return RFloat(s.toFloat64()).exp(p)
-	case TypeRDate, TypeRFloat:
+	case TypeRDateTime, TypeRFloat:
 		return rFloat(s.toFloat64()).exp(p)
 	case TypeRString:
 		n, err := ParseNumber(ToString(p))
