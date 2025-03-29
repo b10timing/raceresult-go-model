@@ -48,7 +48,7 @@ func (d *Date) UnmarshalText(data []byte) (err error) {
 	u, err := ParseISO(string(data))
 	if err == nil {
 		d.day = u.day
-		u.isDefined = true
+		d.isDefined = true
 	}
 	return err
 }
