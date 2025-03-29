@@ -33,6 +33,8 @@ func (s DateTime) Before(c DateTime) bool {
 		return s.Time.Before(c.WithTimezone(s.Time.Location()).Time)
 	case !s.hasZone && c.hasZone:
 		return s.WithTimezone(c.Time.Location()).Time.Before(c.Time)
+	case !s.hasZone && !c.hasZone:
+		return s.WithTimezone(time.UTC).Time.Before(c.WithTimezone(time.UTC).Time)
 	default:
 		return s.Time.Before(c.Time)
 	}
@@ -45,6 +47,8 @@ func (s DateTime) After(c DateTime) bool {
 		return s.Time.After(c.WithTimezone(s.Time.Location()).Time)
 	case !s.hasZone && c.hasZone:
 		return s.WithTimezone(c.Time.Location()).Time.After(c.Time)
+	case !s.hasZone && !c.hasZone:
+		return s.WithTimezone(time.UTC).Time.After(c.WithTimezone(time.UTC).Time)
 	default:
 		return s.Time.After(c.Time)
 	}
