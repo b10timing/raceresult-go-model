@@ -193,6 +193,6 @@ func (s rFloat) isNumeric() bool {
 	return true
 }
 
-func (s rFloat) toJSON() []byte {
+func (s rFloat) toJSON(_ bool) []byte {
 	return []byte(s.toString())
 }

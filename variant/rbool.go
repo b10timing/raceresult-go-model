@@ -151,7 +151,7 @@ func (s rBool) isNumeric() bool {
 	return true
 }
 
-func (s rBool) toJSON() []byte {
+func (s rBool) toJSON(_ bool) []byte {
 	if s {
 		return []byte("true")
 	}

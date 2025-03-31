@@ -64,7 +64,7 @@ type RList interface {
 }
 
 // RListArrayToJSON creates a JSON from an RList array
-func RListArrayToJSON(result []RList) []byte {
+func RListArrayToJSON(result []RList, hashDates bool) []byte {
 	R := len(result)
 	if R == 0 {
 		return []byte("[]")
@@ -84,7 +84,7 @@ func RListArrayToJSON(result []RList) []byte {
 			if j > 0 {
 				sb.WriteByte(',')
 			}
-			sb.Write(ToJSON(result[j].Item(i)))
+			sb.Write(ToJSON(result[j].Item(i), hashDates))
 		}
 		sb.WriteByte(']')
 	}

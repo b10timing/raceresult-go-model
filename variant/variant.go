@@ -76,21 +76,33 @@ type Variant interface {
 
 	isNumeric() bool
 
-	toJSON() []byte
+	toJSON(hashDates bool) []byte
 }
 
 // ToVariant converts interface{} to Variant. Use with extreme care.
 // Most of the time you are doing it wrong if you need this function.
 // If the value is not an int, string, bool, or float64, nil will be returned.
 func ToVariant(i interface{}) Variant {
+	return ToVariant2(i, false)
+}
+
+func ToVariant2(i interface{}, datesHashed bool) Variant {
 	switch v := i.(type) {
 	case int:
 		return RInt(v)
 	case string:
 		l := len(v)
-		if (l == 25 || l == 20 || l == 19 || l == 10) && v[4] == '-' && v[7] == '-' {
-			if v, ok := datetime.Parse(v); ok {
-				return RDateTime(v)
+		if datesHashed {
+			if (l == 27 || l == 22 || l == 21 || l == 12) && v[5] == '-' && v[8] == '-' {
+				if d, ok := datetime.Parse(v[1 : l-1]); ok {
+					return RDateTime(d)
+				}
+			}
+		} else {
+			if (l == 25 || l == 20 || l == 19 || l == 10) && v[4] == '-' && v[7] == '-' {
+				if d, ok := datetime.Parse(v); ok {
+					return RDateTime(d)
+				}
 			}
 		}
 		return RString(v)
@@ -127,11 +139,11 @@ func ToInterface(v Variant) interface{} {
 }
 
 // ToJSON converts the value to a JSON string
-func ToJSON(v Variant) []byte {
+func ToJSON(v Variant, hashDates bool) []byte {
 	if v == nil {
 		return []byte("\"\"")
 	}
-	return v.toJSON()
+	return v.toJSON(hashDates)
 }
 
 // Val parses the value to a number

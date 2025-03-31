@@ -175,9 +175,12 @@ func (s rDateTime) isNumeric() bool {
 	return true
 }
 
-func (s rDateTime) toJSON() []byte {
+func (s rDateTime) toJSON(hashDates bool) []byte {
 	if s.isZero() {
 		return []byte("\"\"")
+	}
+	if hashDates {
+		return []byte("\"#" + s.toDateTime().ToString() + "\"#")
 	}
 	return []byte("\"" + s.toDateTime().ToString() + "\"")
 }

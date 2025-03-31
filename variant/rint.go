@@ -220,6 +220,6 @@ func (s rInt) isNumeric() bool {
 	return true
 }
 
-func (s rInt) toJSON() []byte {
+func (s rInt) toJSON(_ bool) []byte {
 	return []byte(s.toString())
 }

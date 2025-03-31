@@ -203,6 +203,6 @@ func (s rDecimal) isNumeric() bool {
 	return true
 }
 
-func (s rDecimal) toJSON() []byte {
+func (s rDecimal) toJSON(_ bool) []byte {
 	return []byte(s.toString())
 }

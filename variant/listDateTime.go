@@ -87,7 +87,7 @@ func (s DateTimeList) Item(index int) Variant {
 	return rDateTime(s[index])
 }
 
-// Len returns a the length of the list
+// Len returns the length of the list
 func (s DateTimeList) Len() int {
 	return len(s)
 }
@@ -197,7 +197,7 @@ func (s DateTimeList) DivInt(p RList) RList {
 	return s.ToFloat64().DivInt(p)
 }
 
-// Mod calculates the remainer of an integer division with the values of another list and returns a new list with the result
+// Mod calculates the remainder of an integer division with the values of another list and returns a new list with the result
 func (s DateTimeList) Mod(p RList) RList {
 	return s.ToFloat64().Mod(p)
 }

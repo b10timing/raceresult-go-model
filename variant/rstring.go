@@ -213,7 +213,7 @@ func (s rString) isNumeric() bool {
 	return err == nil
 }
 
-func (s rString) toJSON() []byte {
+func (s rString) toJSON(_ bool) []byte {
 	bb, _ := json.Marshal(string(s))
 	return bb
 }
