@@ -157,8 +157,6 @@ type Participant struct {
 	Created           datetime.DateTime
 	Modified          datetime.DateTime
 	Uploaded          datetime.DateTime
-	CreatedTZOffset   int
-	ModifiedTZOffset  int
 	CreatedBy         string
 	ForeignID         int
 	RecordPayGUID     string
