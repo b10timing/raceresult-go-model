@@ -180,7 +180,7 @@ func (s rDateTime) toJSON(hashDates bool) []byte {
 		return []byte("\"\"")
 	}
 	if hashDates {
-		return []byte("\"#" + s.toDateTime().ToString() + "\"#")
+		return []byte("\"#" + s.toDateTime().ToString() + "#\"")
 	}
 	return []byte("\"" + s.toDateTime().ToString() + "\"")
 }
