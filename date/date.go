@@ -210,6 +210,12 @@ func (d Date) IsZero() bool {
 
 // Equal reports whether d and u represent the same date.
 func (d Date) Equal(u Date) bool {
+	if d.isDefined != u.isDefined {
+		return false
+	}
+	if !d.isDefined && !u.isDefined {
+		return true
+	}
 	return d.day == u.day
 }
 
