@@ -45,7 +45,11 @@ func (d *Date) UnmarshalText(data []byte) (err error) {
 	if len(data) == 0 {
 		return nil
 	}
-	u, err := ParseISO(string(data))
+	s := string(data)
+	if len(s) > 10 {
+		s = s[:10]
+	}
+	u, err := ParseISO(s)
 	if err == nil {
 		d.day = u.day
 		d.isDefined = true
