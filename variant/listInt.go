@@ -49,6 +49,15 @@ func (s IntList) ToDateTime() DateTimeList {
 	return r
 }
 
+// ToDate converts the list into a DateList
+func (s IntList) ToDate() DateList {
+	r := NewDateList(len(s))
+	for i, v := range s {
+		r[i] = rInt(v).toDate()
+	}
+	return r
+}
+
 // ToBool converts the list into a BoolList
 func (s IntList) ToBool() BoolList {
 	r := NewBoolList(len(s))

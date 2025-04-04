@@ -45,6 +45,15 @@ func (s StringList) ToDateTime() DateTimeList {
 	return r
 }
 
+// ToDate converts the list into a DateList
+func (s StringList) ToDate() DateList {
+	r := NewDateList(len(s))
+	for i, v := range s {
+		r[i] = rString(v).toDate()
+	}
+	return r
+}
+
 // ToBool converts the list into a BoolList
 func (s StringList) ToBool() BoolList {
 	r := NewBoolList(len(s))

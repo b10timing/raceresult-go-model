@@ -1,6 +1,7 @@
 package variant
 
 import (
+	"github.com/raceresult/go-model/date"
 	"github.com/raceresult/go-model/datetime"
 	"github.com/raceresult/go-model/decimal"
 	"golang.org/x/text/collate"
@@ -94,6 +95,13 @@ func (s rBool) toDateTime() datetime.DateTime {
 		return datetime.ZeroDate().Add(24 * time.Hour)
 	}
 	return datetime.ZeroDate()
+}
+
+func (s rBool) toDate() date.Date {
+	if s {
+		return date.ZeroDateVB.AddDate(0, 0, 1)
+	}
+	return date.ZeroDateVB
 }
 
 func (s rBool) toBool() bool {

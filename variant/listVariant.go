@@ -55,6 +55,15 @@ func (s VariantList) ToDateTime() DateTimeList {
 	return r
 }
 
+// ToDate converts the list into a DateList
+func (s VariantList) ToDate() DateList {
+	r := NewDateList(len(s))
+	for i, v := range s {
+		r[i] = ToDate(v)
+	}
+	return r
+}
+
 // ToBool converts the list into a BoolList
 func (s VariantList) ToBool() BoolList {
 	r := NewBoolList(len(s))

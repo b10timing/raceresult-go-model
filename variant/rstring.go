@@ -2,6 +2,7 @@ package variant
 
 import (
 	"encoding/json"
+	"github.com/raceresult/go-model/date"
 	"github.com/raceresult/go-model/datetime"
 	"github.com/raceresult/go-model/decimal"
 	"golang.org/x/text/collate"
@@ -98,6 +99,17 @@ func (s rString) toDateTime() datetime.DateTime {
 		return d
 	}
 	return datetime.ZeroDate()
+}
+
+func (s rString) toDate() date.Date {
+	s2 := string(s)
+	if len(s2) > 10 {
+		s2 = s2[:10]
+	}
+	if d, err := date.ParseISO(s2); err == nil {
+		return d
+	}
+	return date.ZeroDateVB
 }
 
 func (s rString) toBool() bool {

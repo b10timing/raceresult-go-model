@@ -1,6 +1,7 @@
 package variant
 
 import (
+	"github.com/raceresult/go-model/date"
 	"github.com/raceresult/go-model/datetime"
 	"github.com/raceresult/go-model/decimal"
 	"golang.org/x/text/collate"
@@ -78,6 +79,10 @@ func (s rDecimal) toStringWithDateFormat(string) string {
 
 func (s rDecimal) toDateTime() datetime.DateTime {
 	return toTime(s.toFloat64())
+}
+
+func (s rDecimal) toDate() date.Date {
+	return date.ZeroDateVB.AddDate(0, 0, s.toInt())
 }
 
 func (s rDecimal) toBool() bool {

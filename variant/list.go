@@ -14,8 +14,11 @@ type RList interface {
 	// ToStringWithDateFormat converts the values to string with a given date format
 	ToStringWithDateFormat(df string) StringList
 
-	// ToDateTime converts the values to to time.Time.
+	// ToDateTime converts the values to datetime.DateTime.
 	ToDateTime() DateTimeList
+
+	// ToDate converts the values to date.Date.
+	ToDate() DateList
 
 	// ToBool converts the values to bool.
 	ToBool() BoolList

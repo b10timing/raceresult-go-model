@@ -57,6 +57,15 @@ func (s DecimalList) ToDateTime() DateTimeList {
 	return r
 }
 
+// ToDate converts the list into a DateList
+func (s DecimalList) ToDate() DateList {
+	r := NewDateList(len(s))
+	for i, v := range s {
+		r[i] = RDecimal(v).toDate()
+	}
+	return r
+}
+
 // ToBool converts the list into a BoolList
 func (s DecimalList) ToBool() BoolList {
 	r := NewBoolList(len(s))

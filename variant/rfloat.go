@@ -1,6 +1,7 @@
 package variant
 
 import (
+	"github.com/raceresult/go-model/date"
 	"github.com/raceresult/go-model/datetime"
 	"github.com/raceresult/go-model/decimal"
 	"golang.org/x/text/collate"
@@ -92,6 +93,10 @@ func (s rFloat) toStringWithDateFormat(string) string {
 
 func (s rFloat) toDateTime() datetime.DateTime {
 	return toTime(float64(s))
+}
+
+func (s rFloat) toDate() date.Date {
+	return date.ZeroDateVB.AddDate(0, 0, s.toInt())
 }
 
 func toTime(f float64) datetime.DateTime {

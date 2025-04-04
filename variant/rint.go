@@ -1,6 +1,7 @@
 package variant
 
 import (
+	"github.com/raceresult/go-model/date"
 	"github.com/raceresult/go-model/datetime"
 	"github.com/raceresult/go-model/decimal"
 	"golang.org/x/text/collate"
@@ -94,6 +95,10 @@ func (s rInt) toDateTime() datetime.DateTime {
 	return datetime.ZeroDate().AddDate(0, 0, int(s))
 }
 
+func (s rInt) toDate() date.Date {
+	return date.ZeroDateVB.AddDate(0, 0, s.toInt())
+}
+
 func (s rInt) toBool() bool {
 	return s != 0
 }
@@ -122,7 +127,7 @@ func (s rInt) plus(p Variant) Variant {
 		return rInt(int(s) + p.toInt())
 	case TypeRDecimal:
 		return rDecimal(s.toDecimal()).plus(p)
-	case TypeRDateTime, TypeRFloat, TypeRString:
+	case TypeRDateTime, TypeRDate, TypeRFloat, TypeRString:
 		return rFloat(s.toFloat64()).plus(p)
 	default:
 		return nil
@@ -135,7 +140,7 @@ func (s rInt) minus(p Variant) Variant {
 		return rInt(int(s) - p.toInt())
 	case TypeRDecimal:
 		return rDecimal(s.toDecimal()).minus(p)
-	case TypeRDateTime, TypeRFloat, TypeRString:
+	case TypeRDateTime, TypeRDate, TypeRFloat, TypeRString:
 		return rFloat(s.toFloat64()).minus(p)
 	default:
 		return nil
@@ -148,7 +153,7 @@ func (s rInt) mult(p Variant) Variant {
 		return rInt(int(s) * p.toInt())
 	case TypeRDecimal:
 		return rDecimal(s.toDecimal()).mult(p)
-	case TypeRDateTime, TypeRFloat, TypeRString:
+	case TypeRDateTime, TypeRDate, TypeRFloat, TypeRString:
 		return rFloat(s.toFloat64()).mult(p)
 	default:
 		return nil
@@ -165,7 +170,7 @@ func (s rInt) div(p Variant) Variant {
 		return rFloat(float64(s) / float64(x))
 	case TypeRDecimal:
 		return rDecimal(s.toDecimal()).div(p)
-	case TypeRDateTime, TypeRFloat, TypeRString:
+	case TypeRDateTime, TypeRDate, TypeRFloat, TypeRString:
 		return rFloat(s.toFloat64()).div(p)
 	default:
 		return nil
@@ -182,7 +187,7 @@ func (s rInt) divInt(p Variant) Variant {
 		return rInt(int(s) / x)
 	case TypeRDecimal:
 		return rDecimal(s.toDecimal()).divInt(p)
-	case TypeRDateTime, TypeRFloat, TypeRString:
+	case TypeRDateTime, TypeRDate, TypeRFloat, TypeRString:
 		return rFloat(s.toFloat64()).divInt(p)
 	default:
 		return nil
@@ -203,7 +208,7 @@ func (s rInt) exp(p Variant) Variant {
 		return RInt(int(math.Pow(s.toFloat64(), p.toFloat64())))
 	case TypeRDecimal:
 		return RFloat(s.toFloat64()).exp(p)
-	case TypeRDateTime, TypeRFloat:
+	case TypeRDateTime, TypeRDate, TypeRFloat:
 		return rFloat(s.toFloat64()).exp(p)
 	case TypeRString:
 		n, err := ParseNumber(ToString(p))

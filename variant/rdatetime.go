@@ -1,6 +1,7 @@
 package variant
 
 import (
+	"github.com/raceresult/go-model/date"
 	"github.com/raceresult/go-model/datetime"
 	"github.com/raceresult/go-model/decimal"
 	"golang.org/x/text/collate"
@@ -84,6 +85,10 @@ func (s rDateTime) toDateTime() datetime.DateTime {
 	return datetime.DateTime(s)
 }
 
+func (s rDateTime) toDate() date.Date {
+	return date.NewAt(datetime.DateTime(s).ToTime())
+}
+
 func (s rDateTime) toBool() bool {
 	return !s.toDateTime().IsZero()
 }
@@ -117,6 +122,8 @@ func (s rDateTime) plus(p Variant) Variant {
 		return rDateTime(s.toDateTime().AddDate(0, 0, p.toInt()))
 	case TypeRDateTime:
 		return nil
+	case TypeRDate:
+		return nil
 	case TypeRFloat:
 		return rDateTime(s.toDateTime().Add(time.Duration(p.toFloat64() * 86400 * 1000 * 1000 * 1000)))
 	case TypeRString:
@@ -138,6 +145,8 @@ func (s rDateTime) minus(p Variant) Variant {
 	case TypeRBool:
 		return rDateTime(s.toDateTime().AddDate(0, 0, -p.toInt()))
 	case TypeRDateTime:
+		return rFloat(s.toDateTime().Sub(p.toDateTime()).Hours() / 24)
+	case TypeRDate:
 		return rFloat(s.toDateTime().Sub(p.toDateTime()).Hours() / 24)
 	case TypeRFloat:
 		return rDateTime(s.toDateTime().Add(time.Duration(-p.toFloat64() * 86400 * 1000 * 1000 * 1000)))

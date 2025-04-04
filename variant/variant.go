@@ -1,6 +1,7 @@
 package variant
 
 import (
+	"github.com/raceresult/go-model/date"
 	"github.com/raceresult/go-model/datetime"
 	"github.com/raceresult/go-model/decimal"
 	"golang.org/x/text/collate"
@@ -37,6 +38,9 @@ type Variant interface {
 
 	// ToDateTime converts the value to DateTime.
 	toDateTime() datetime.DateTime
+
+	// ToDate converts the value to Date.
+	toDate() date.Date
 
 	// ToBool converts the value to bool.
 	toBool() bool
@@ -133,6 +137,8 @@ func ToInterface(v Variant) interface{} {
 		return v.toDecimal()
 	case TypeRDateTime:
 		return v.toDateTime()
+	case TypeRDate:
+		return v.toDate()
 	default:
 		panic("new variant type not implemented")
 	}

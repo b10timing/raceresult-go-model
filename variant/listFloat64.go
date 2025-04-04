@@ -49,6 +49,15 @@ func (s Float64List) ToDateTime() DateTimeList {
 	return r
 }
 
+// ToDate converts the list into a DateList
+func (s Float64List) ToDate() DateList {
+	r := NewDateList(len(s))
+	for i, v := range s {
+		r[i] = rFloat(v).toDate()
+	}
+	return r
+}
+
 // ToBool converts the list into a BoolList
 func (s Float64List) ToBool() BoolList {
 	r := NewBoolList(len(s))

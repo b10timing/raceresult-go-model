@@ -12,6 +12,7 @@ const (
 	TypeRFloat
 	TypeRDecimal
 	TypeRDateTime
+	TypeRDate
 )
 
 // GetType returns the type of the given variant.
@@ -66,13 +67,22 @@ func IsDecimal(v Variant) bool {
 	return v.getType() == TypeRDecimal
 }
 
-// IsDateTime checks if given variable is a date.
+// IsDateTime checks if given variable is a datetime.
 // noinspection GoUnusedExportedFunction
 func IsDateTime(v Variant) bool {
 	if v == nil {
 		return false
 	}
 	return v.getType() == TypeRDateTime
+}
+
+// IsDate checks if given variable is a date.
+// noinspection GoUnusedExportedFunction
+func IsDate(v Variant) bool {
+	if v == nil {
+		return false
+	}
+	return v.getType() == TypeRDate
 }
 
 // IsEmpty checks if given variable is empty.
