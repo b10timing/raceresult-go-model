@@ -106,6 +106,10 @@ func MustParseISO(value string) Date {
 //
 // Background: https://en.wikipedia.org/wiki/ISO_8601#Dates
 func ParseISO(value string) (Date, error) {
+	if value == "" {
+		return Date{}, fmt.Errorf("date.ParseISO: string empty", value)
+	}
+
 	abs := value
 	if value[0] == '+' || value[0] == '-' {
 		abs = value[1:]
