@@ -97,13 +97,22 @@ func ToVariant2(i interface{}, datesHashed bool) Variant {
 	case string:
 		l := len(v)
 		if datesHashed {
-			if (l == 27 || l == 22 || l == 21 || l == 12) && v[5] == '-' && v[8] == '-' {
+			if (l == 12) && v[5] == '-' && v[8] == '-' {
+				if d, err := date.ParseISO(v[1 : l-1]); err == nil {
+					return RDate(d)
+				}
+
+			} else if (l == 27 || l == 22 || l == 21) && v[5] == '-' && v[8] == '-' {
 				if d, ok := datetime.Parse(v[1 : l-1]); ok {
 					return RDateTime(d)
 				}
 			}
 		} else {
-			if (l == 25 || l == 20 || l == 19 || l == 10) && v[4] == '-' && v[7] == '-' {
+			if (l == 10) && v[4] == '-' && v[7] == '-' {
+				if d, err := date.ParseISO(v); err == nil {
+					return RDate(d)
+				}
+			} else if (l == 25 || l == 20 || l == 19) && v[4] == '-' && v[7] == '-' {
 				if d, ok := datetime.Parse(v); ok {
 					return RDateTime(d)
 				}
