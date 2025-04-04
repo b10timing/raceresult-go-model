@@ -65,7 +65,7 @@ func (s rDate) greater(v Variant, _ *collate.Collator) bool {
 }
 
 func (s rDate) toString() string {
-	return date.Date(s).FormatISO(4)
+	return date.Date(s).String()
 }
 
 func (s rDate) toStringWithDateFormat(df string) string {
@@ -189,7 +189,7 @@ func (s rDate) toJSON(hashDates bool) []byte {
 		return []byte("\"\"")
 	}
 	if hashDates {
-		return []byte("\"#" + s.toDate().FormatISO(4) + "#\"")
+		return []byte("\"#" + s.toDate().String() + "#\"")
 	}
-	return []byte("\"" + s.toDate().FormatISO(4) + "\"")
+	return []byte("\"" + s.toDate().String() + "\"")
 }

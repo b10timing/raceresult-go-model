@@ -27,28 +27,3 @@ func TestDate_String(t *testing.T) {
 		}
 	}
 }
-
-func TestDate_FormatISO(t *testing.T) {
-	cases := []struct {
-		value string
-		n     int
-	}{
-		{"-5000-02-03", 4},
-		{"-05000-02-03", 5},
-		{"-005000-02-03", 6},
-		{"+0000-01-01", 4},
-		{"+00000-01-01", 5},
-		{"+1000-01-01", 4},
-		{"+01000-01-01", 5},
-		{"+1970-01-01", 4},
-		{"+001999-12-31", 6},
-		{"+999999-12-31", 6},
-	}
-	for _, c := range cases {
-		d := MustParseISO(c.value)
-		value := d.FormatISO(c.n)
-		if value != c.value {
-			t.Errorf("FormatISO(%v) == %v, want %v", c, value, c.value)
-		}
-	}
-}

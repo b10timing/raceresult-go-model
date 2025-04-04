@@ -72,12 +72,3 @@ func ExampleDate_Format() {
 	fmt.Println(d.Format(layout))
 	// Output: Nov 10, 2009
 }
-
-func ExampleDate_FormatISO() {
-	// According to legend, Rome was founded on April 21, 753 BC.
-	// Note that with astronomical year numbering, 753 BC becomes -752
-	// because 1 BC is actually year 0.
-	d := New(-752, time.April, 21)
-	fmt.Println(d.FormatISO(5))
-	// Output: -00752-04-21
-}

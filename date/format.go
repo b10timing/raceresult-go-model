@@ -60,29 +60,6 @@ func (d Date) WriteTo(w io.Writer) (n64 int64, err error) {
 	return int64(n), err
 }
 
-// FormatISO returns a textual representation of the date value formatted
-// according to the expanded year variant of the ISO 8601 extended format;
-// the year of the date is represented as a signed integer using the
-// specified number of digits (ignored if less than four).
-// The string representation of the year will take more than the specified
-// number of digits if the magnitude of the year is too large to fit.
-//
-// Function Date.Format can be used to format Date values in other formats,
-// but it is currently not able to format dates according to the expanded
-// year variant of the ISO 8601 format.
-func (d Date) FormatISO(yearDigits int) string {
-	if d.IsZero() {
-		return ""
-	}
-
-	n := 5 // four-digit minimum plus sign
-	if yearDigits > 4 {
-		n += yearDigits - 4
-	}
-	year, month, day := d.Date()
-	return fmt.Sprintf("%+0*d-%02d-%02d", n, year, month, day)
-}
-
 // Format returns a textual representation of the date value formatted according
 // to layout, which defines the format by showing how the reference date,
 // defined to be
