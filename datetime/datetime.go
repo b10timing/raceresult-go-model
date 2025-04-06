@@ -187,6 +187,14 @@ func (s DateTime) WithTimezone(tz *time.Location) DateTime {
 	}
 }
 
+// Round is equal to time.Time but returns DateTime
+func (s DateTime) Round(d time.Duration) DateTime {
+	return DateTime{
+		Time:    s.Time.Round(d),
+		hasZone: s.hasZone,
+	}
+}
+
 // Parse parses a date from string
 func Parse(str string) (DateTime, bool) {
 	if strings.Count(str, ".") == 2 {
