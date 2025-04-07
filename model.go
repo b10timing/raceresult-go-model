@@ -108,14 +108,6 @@ type CustomField struct {
 	MaxLen      int
 }
 
-// CustomFieldValue describes the internal go model
-type CustomFieldValue struct {
-	ID      int
-	FieldID int
-	PID     int
-	Value   string
-}
-
 // Participant describes the internal go model
 type Participant struct {
 	ID                int
