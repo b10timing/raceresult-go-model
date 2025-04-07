@@ -69,6 +69,9 @@ func (s rDate) toString() string {
 }
 
 func (s rDate) toStringWithDateFormat(df string) string {
+	if df == "" {
+		return date.Date(s).String()
+	}
 	return date.Date(s).Format(df)
 }
 

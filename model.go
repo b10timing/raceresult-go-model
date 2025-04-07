@@ -506,20 +506,6 @@ type TimingPoint struct {
 	Color          string
 }
 
-// Setting describes the internal go model
-type Setting struct {
-	ID              int
-	Name            string
-	Type            int
-	ForeignID       int
-	ValNo           decimal.Decimal
-	ValString       string
-	ValMemo         string
-	ValBoolean      bool
-	ValDate         datetime.DateTime
-	RandomVersionID int
-}
-
 type UserDefinedField struct {
 	Name       string
 	Expression string

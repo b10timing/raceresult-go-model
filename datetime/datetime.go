@@ -161,11 +161,11 @@ func (s DateTime) ToString() string {
 
 // ToStringWithDateFormat converts the date to string with the given date format
 func (s DateTime) ToStringWithDateFormat(df string) string {
-	if df == "" {
-		return s.ToString()
-	}
 	if s.IsZero() {
 		return ""
+	}
+	if df == "" {
+		return s.ToString()
 	}
 	if s.Time.Unix()%86400 == 0 {
 		return s.Time.Format(df)
