@@ -128,6 +128,8 @@ func (s DateTimeList) Plus(p RList) RList {
 		return s.Plus(v.ToInt())
 	case DateTimeList:
 		return NewVariantList(len(s)) // empty!
+	case DateList:
+		return NewVariantList(len(s)) // empty!
 	case Float64List:
 		for i := range s {
 			s[i] = s[i].Add(time.Duration(v[i] * 86400 * 1000 * 1000 * 1000))
@@ -168,6 +170,12 @@ func (s DateTimeList) Minus(p RList) RList {
 		result := NewFloat64List(len(s))
 		for i := range s {
 			result[i] = s[i].Sub(v[i]).Hours() / 24
+		}
+		return result
+	case DateList:
+		result := NewFloat64List(len(s))
+		for i := range s {
+			result[i] = s[i].Sub(rDate(v[i]).toDateTime()).Hours() / 24
 		}
 		return result
 	case Float64List:

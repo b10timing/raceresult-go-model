@@ -113,7 +113,7 @@ func (s Float64List) Val() RList {
 // Plus adds the values of another list and returns a new list with the sums
 func (s Float64List) Plus(p RList) RList {
 	switch v := p.(type) {
-	case IntList, DecimalList, BoolList, DateTimeList:
+	case IntList, DecimalList, BoolList, DateTimeList, DateList:
 		return s.Plus(v.ToFloat64())
 	case StringList:
 		result := NewVariantList(len(s))
@@ -140,7 +140,7 @@ func (s Float64List) Plus(p RList) RList {
 // Minus substracts the values of another list and returns a new list result
 func (s Float64List) Minus(p RList) RList {
 	switch v := p.(type) {
-	case IntList, DecimalList, BoolList, DateTimeList:
+	case IntList, DecimalList, BoolList, DateTimeList, DateList:
 		return s.Minus(v.ToFloat64())
 	case StringList:
 		result := NewVariantList(len(s))
@@ -167,7 +167,7 @@ func (s Float64List) Minus(p RList) RList {
 // Mult multiplies the values of another list and returns a new list with the result
 func (s Float64List) Mult(p RList) RList {
 	switch v := p.(type) {
-	case IntList, DecimalList, BoolList, DateTimeList:
+	case IntList, DecimalList, BoolList, DateTimeList, DateList:
 		return s.Mult(v.ToFloat64())
 	case StringList:
 		result := NewVariantList(len(s))
@@ -194,7 +194,7 @@ func (s Float64List) Mult(p RList) RList {
 // Div divides the values of another list and returns a new list with the result
 func (s Float64List) Div(p RList) RList { //nolint:dupl
 	switch v := p.(type) {
-	case IntList, DecimalList, BoolList, DateTimeList:
+	case IntList, DecimalList, BoolList, DateTimeList, DateList:
 		return s.Div(v.ToFloat64())
 	case StringList:
 		result := NewVariantList(len(s))
@@ -225,7 +225,7 @@ func (s Float64List) Div(p RList) RList { //nolint:dupl
 // DivInt performs integer division with the values of another list and returns a new list with the result
 func (s Float64List) DivInt(p RList) RList { //nolint:dupl
 	switch v := p.(type) {
-	case IntList, DecimalList, BoolList, DateTimeList:
+	case IntList, DecimalList, BoolList, DateTimeList, DateList:
 		return s.DivInt(v.ToFloat64())
 	case StringList:
 		result := NewVariantList(len(s))
@@ -275,7 +275,7 @@ func (s Float64List) Mod(p RList) RList {
 			s[i] = float64(k) + z
 		}
 		return s
-	case DecimalList, BoolList, DateTimeList, Float64List:
+	case DecimalList, BoolList, DateTimeList, DateList, Float64List:
 		return s.Mod(v.ToInt())
 	case StringList:
 		result := NewVariantList(len(s))

@@ -86,7 +86,7 @@ func (s StringList) Item(index int) Variant {
 	return rString(s[index])
 }
 
-// Len returns a the length of the list
+// Len returns the length of the list
 func (s StringList) Len() int {
 	return len(s)
 }

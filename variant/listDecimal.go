@@ -124,7 +124,7 @@ func (s DecimalList) Plus(p RList) RList {
 		return s
 	case Float64List:
 		return s.ToFloat64().Plus(p)
-	case BoolList, IntList, DateTimeList:
+	case BoolList, IntList, DateTimeList, DateList:
 		return s.Plus(v.ToDecimal())
 	case StringList:
 		result := NewVariantList(len(s))
@@ -153,7 +153,7 @@ func (s DecimalList) Minus(p RList) RList {
 		return s
 	case Float64List:
 		return s.ToFloat64().Minus(p)
-	case IntList, BoolList, DateTimeList:
+	case IntList, BoolList, DateTimeList, DateList:
 		return s.Minus(v.ToDecimal())
 	case StringList:
 		result := NewVariantList(len(s))
@@ -182,7 +182,7 @@ func (s DecimalList) Mult(p RList) RList {
 		return s
 	case Float64List:
 		return s.ToFloat64().Mult(p)
-	case IntList, BoolList, DateTimeList:
+	case IntList, BoolList, DateTimeList, DateList:
 		return s.Mult(v.ToDecimal())
 	case StringList:
 		result := NewVariantList(len(s))
@@ -213,7 +213,7 @@ func (s DecimalList) Div(p RList) RList {
 			result[i] = s[i].Div(v[i])
 		}
 		return result
-	case IntList, BoolList, DateTimeList:
+	case IntList, BoolList, DateTimeList, DateList:
 		return s.Div(v.ToFloat64())
 	case DecimalList:
 		result := NewVariantList(len(s))
@@ -254,7 +254,7 @@ func (s DecimalList) DivInt(p RList) RList {
 			s[i] = decimal.Decimals * x
 		}
 		return s
-	case IntList, BoolList, DateTimeList, Float64List:
+	case IntList, BoolList, DateTimeList, DateList, Float64List:
 		return s.DivInt(v.ToDecimal())
 	case StringList:
 		result := NewVariantList(len(s))
@@ -288,7 +288,7 @@ func (s DecimalList) Mod(p RList) RList {
 			s[i] %= v[i]
 		}
 		return s
-	case IntList, BoolList, DateTimeList, Float64List:
+	case IntList, BoolList, DateTimeList, DateList, Float64List:
 		return s.Mod(v.ToDecimal())
 	case StringList:
 		result := NewVariantList(len(s))
