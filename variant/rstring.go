@@ -106,7 +106,7 @@ func (s rString) toDate() date.Date {
 	if len(s2) > 10 {
 		s2 = s2[:10]
 	}
-	if d, err := date.ParseISO(s2); err == nil {
+	if d, err := date.AutoParse(s2); err == nil {
 		return d
 	}
 	return date.ZeroDateVB
