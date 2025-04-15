@@ -72,7 +72,16 @@ func (s DateTime) Add(d time.Duration) DateTime {
 
 // Sub is equal to time.Time
 func (s DateTime) Sub(d DateTime) time.Duration {
-	return s.Time.Sub(d.Time)
+	switch {
+	case s.hasZone && !d.hasZone:
+		return s.Time.Sub(s.WithTimezone(s.Time.Location()).Time)
+	case !s.hasZone && d.hasZone:
+		return s.WithTimezone(d.Time.Location()).Time.Sub(s.Time)
+	case !s.hasZone && !d.hasZone:
+		return s.WithTimezone(time.UTC).Time.Sub(d.WithTimezone(time.UTC).Time)
+	default:
+		return s.Time.Sub(d.Time)
+	}
 }
 
 // ToTime returns the DateTime as time.Time
