@@ -74,7 +74,7 @@ func (s DateTime) Add(d time.Duration) DateTime {
 func (s DateTime) Sub(d DateTime) time.Duration {
 	switch {
 	case s.hasZone && !d.hasZone:
-		return s.Time.Sub(s.WithTimezone(s.Time.Location()).Time)
+		return s.Time.Sub(d.WithTimezone(s.Time.Location()).Time)
 	case !s.hasZone && d.hasZone:
 		return s.WithTimezone(d.Time.Location()).Time.Sub(s.Time)
 	case !s.hasZone && !d.hasZone:
