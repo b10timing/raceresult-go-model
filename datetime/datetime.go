@@ -76,7 +76,7 @@ func (s DateTime) Sub(d DateTime) time.Duration {
 	case s.hasZone && !d.hasZone:
 		return s.Time.Sub(d.WithTimezone(s.Time.Location()).Time)
 	case !s.hasZone && d.hasZone:
-		return s.WithTimezone(d.Time.Location()).Time.Sub(s.Time)
+		return s.WithTimezone(d.Time.Location()).Time.Sub(d.Time)
 	case !s.hasZone && !d.hasZone:
 		return s.WithTimezone(time.UTC).Time.Sub(d.WithTimezone(time.UTC).Time)
 	default:
