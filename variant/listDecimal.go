@@ -177,7 +177,13 @@ func (s DecimalList) Mult(p RList) RList {
 	switch v := p.(type) {
 	case DecimalList:
 		for i := range s {
-			s[i] = s[i] * v[i] / decimal.Decimals
+			if v[i]%decimal.Decimals == 0 { // to prevent overflows
+				s[i] = s[i] * (v[i] / decimal.Decimals)
+			} else if s[i]%decimal.Decimals == 0 { // to prevent overflows
+				s[i] = (s[i] / decimal.Decimals) * v[i]
+			} else {
+				s[i] = s[i] * v[i] / decimal.Decimals
+			}
 		}
 		return s
 	case Float64List:
