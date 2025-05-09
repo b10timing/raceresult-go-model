@@ -175,21 +175,22 @@ type Mapping struct {
 }
 
 type Method struct {
-	ID               int
-	NameShort        string
-	Name             string
-	Currency         string
-	TransactionFee   decimal.Decimal
-	Disagio          decimal.Decimal
-	RegFee           decimal.Decimal
-	TransactionCosts decimal.Decimal
-	DisagioCosts     decimal.Decimal
-	TransferDelay    int
-	Activated        bool
-	NoPayout         bool
-	NoTestMode       bool
-	Rounding         decimal.Decimal
-	DontShowFee      bool
+	ID                  int
+	NameShort           string
+	Name                string
+	Currency            string
+	TransactionFee      decimal.Decimal
+	Disagio             decimal.Decimal
+	RegFee              decimal.Decimal
+	TransactionCosts    decimal.Decimal
+	DisagioCosts        decimal.Decimal
+	TransferDelay       int
+	Activated           bool
+	NoPayout            bool
+	InstantReceivalByRR bool
+	NoTestMode          bool
+	Rounding            decimal.Decimal
+	DontShowFee         bool
 }
 
 type BankCheckResult struct {
