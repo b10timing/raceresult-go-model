@@ -15,18 +15,16 @@ type RegistrationFilter struct {
 }
 
 type PaymentFilter struct {
-	ID             []int
-	IDorRetry      []int
-	RetryOf        []int
-	Event          []int
-	Month          []int
-	Year           []int
-	Method         []int
-	Reference      []string
-	Email          []string
-	Search         []string
-	Received       []bool
-	ReceivedAmount []decimal.Decimal
-	MinCreated     time.Time
-	ToPay          decimal.Decimal
+	ID         []int
+	IDorRetry  []int
+	RetryOf    []int
+	Event      []int
+	Month      []int
+	Year       []int
+	Method     []int
+	Reference  []string
+	Email      []string
+	Search     []string
+	MinCreated time.Time
+	ToPay      decimal.Decimal
 }
