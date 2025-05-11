@@ -149,6 +149,7 @@ type Contract struct {
 	IBAN         string
 	SWIFT        string
 	Type         string
+	Language     string
 	HasContract  bool `db:"length(Contract)>0"`
 }
 
