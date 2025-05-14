@@ -26,5 +26,6 @@ type PaymentFilter struct {
 	Email      []string
 	Search     []string
 	MinCreated time.Time
+	MaxCreated time.Time
 	ToPay      decimal.Decimal
 }
