@@ -122,16 +122,6 @@ type Payment struct {
 	PIDs                string
 }
 
-type Booking struct {
-	ID          int
-	BookingDate time.Time
-	BookingText string
-	Amount      decimal.Decimal
-	Currency    string
-	Account     string
-	Status      int
-}
-
 type Bank struct {
 	ID       int
 	BranchNo string
@@ -166,13 +156,6 @@ type EventReceiver struct {
 	KickbackPerc  decimal.Decimal
 	KickbackMode  int
 	ModJobID      int
-}
-
-type Mapping struct {
-	ID        int
-	BookingID int
-	PaymentID int
-	Amount    decimal.Decimal
 }
 
 type Method struct {
