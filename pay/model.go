@@ -79,56 +79,42 @@ type Registration struct {
 }
 
 type Payment struct {
-	ID                  int
-	CustNo              int
-	Event               int
-	Method              int
-	Currency            string
-	Amount              decimal.Decimal
-	Fees                decimal.Decimal
-	UserFees            decimal.Decimal
-	Kickback            decimal.Decimal
-	ExchangeRate        float64
-	FeesEUR             decimal.Decimal
-	Created             time.Time
-	DebitDate           time.Time
-	ReceivedDate        time.Time
-	ReceivedAmount      decimal.Decimal
-	TransferredKickback decimal.Decimal
-	TransferredDate     time.Time
-	TransferredAmount   decimal.Decimal
-	EventCurrency       string
-	FailedDate          time.Time
-	AccountOwner        string
-	AccountNo           string
-	BranchNo            string
-	BankName            string
-	IBAN                string
-	BIC                 string
-	DebitDescription    string
-	Reference           string
-	Email               string
-	EFDetails           string
-	BillNo              int
-	RetryOf             int
-	Lang                string
-	ReminderSent        int
-	LastReminder        time.Time
-	Comment             string
-	Synced              bool
-	LastSyncTry         time.Time
-	IgnorePayment       bool
-	IgnoreReason        string
-	PIDs                string
-}
-
-type Bank struct {
-	ID       int
-	BranchNo string
-	BIC      string
-	Name     string
-	Country  int
-	COR1     bool
+	ID               int
+	CustNo           int
+	Event            int
+	Method           int
+	Currency         string
+	Amount           decimal.Decimal
+	Fees             decimal.Decimal
+	UserFees         decimal.Decimal
+	Kickback         decimal.Decimal
+	ExchangeRate     float64
+	Created          time.Time
+	DebitDate        time.Time
+	ReceivedDate     time.Time
+	ReceivedAmount   decimal.Decimal
+	EventCurrency    string
+	AccountOwner     string
+	AccountNo        string
+	BranchNo         string
+	BankName         string
+	IBAN             string
+	BIC              string
+	DebitDescription string
+	Reference        string
+	Email            string
+	EFDetails        string
+	BillNo           int
+	RetryOf          int
+	Lang             string
+	ReminderSent     int
+	LastReminder     time.Time
+	Comment          string
+	Synced           bool
+	LastSyncTry      time.Time
+	IgnorePayment    bool
+	IgnoreReason     string
+	PIDs             string
 }
 
 type Contract struct {
