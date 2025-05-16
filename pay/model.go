@@ -113,6 +113,7 @@ type Payment struct {
 	IgnorePayment    bool
 	IgnoreReason     string
 	PIDs             string
+	RequestID        int
 }
 
 type Contract struct {
