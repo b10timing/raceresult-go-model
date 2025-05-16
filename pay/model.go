@@ -107,8 +107,6 @@ type Payment struct {
 	BillNo           int
 	RetryOf          int
 	Lang             string
-	ReminderSent     int
-	LastReminder     time.Time
 	Comment          string
 	Synced           bool
 	LastSyncTry      time.Time
