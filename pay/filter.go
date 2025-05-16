@@ -28,4 +28,5 @@ type PaymentFilter struct {
 	MinCreated time.Time
 	MaxCreated time.Time
 	ToPay      decimal.Decimal
+	RequestID  []int
 }
