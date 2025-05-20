@@ -43,6 +43,15 @@ const (
 	PmCB               int = 99
 )
 
+const (
+	PayStateUndefined int = 0
+	PayStatePending   int = 1
+	PayStateUnderpaid int = 2
+	PayStatePaid      int = 3
+	PayStateOverpaid  int = 4
+	PayStateNoPayout  int = 5
+)
+
 // MethodOption is a payment method option the user will be offered
 type MethodOption struct {
 	ID            int
