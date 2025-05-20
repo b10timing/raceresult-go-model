@@ -118,8 +118,6 @@ type Payment struct {
 	RetryOf          int
 	Lang             string
 	Comment          string
-	Synced           bool
-	LastSyncTry      time.Time
 	IgnorePayment    bool
 	IgnoreReason     string
 	PIDs             string
