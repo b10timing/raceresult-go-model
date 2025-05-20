@@ -93,6 +93,7 @@ type Payment struct {
 	DebitDate        time.Time
 	ReceivedDate     time.Time
 	ReceivedAmount   decimal.Decimal
+	PayState         int
 	EventCurrency    string
 	AccountOwner     string
 	AccountNo        string
