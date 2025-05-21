@@ -280,7 +280,7 @@ type RawDataReduced struct {
 	OrderID     int
 	Result      int
 	IsMarker    bool
-	RSSI        byte
+	RSSI        int
 }
 
 // RawDataFilter describes the internal go model
