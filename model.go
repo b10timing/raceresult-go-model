@@ -197,6 +197,7 @@ type EntryFee struct {
 	Multiplication  string
 	Category        string
 	Tax             decimal.Decimal
+	OrderPos        int
 }
 
 // Exporter describes the internal go model
