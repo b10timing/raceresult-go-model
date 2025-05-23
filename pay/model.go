@@ -85,6 +85,7 @@ type Registration struct {
 	Lang      string
 	PaymentID int
 	EntryFee  decimal.Decimal
+	PID       int
 }
 
 type Payment struct {
