@@ -8,6 +8,7 @@ import (
 type RegistrationFilter struct {
 	ID        []int
 	Event     []int
+	PID       []int
 	Month     []int
 	Year      []int
 	PaymentID []int
