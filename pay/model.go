@@ -121,7 +121,6 @@ type Payment struct {
 	Comment          string
 	IgnorePayment    bool
 	IgnoreReason     string
-	PIDs             string
 	RequestID        int
 }
 
@@ -185,7 +184,6 @@ type CreateRequest struct {
 	RegKey             string
 	Mode               string
 	TestMode           bool
-	RegLines           int
 	ChangeID           int
 	ChangeKey          string
 	Amount             decimal.Decimal
