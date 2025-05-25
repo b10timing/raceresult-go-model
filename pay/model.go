@@ -114,7 +114,6 @@ type Payment struct {
 	DebitDescription string
 	Reference        string
 	Email            string
-	EFDetails        string
 	BillNo           int
 	RetryOf          int
 	Lang             string
