@@ -84,7 +84,6 @@ type Registration struct {
 	Country   int
 	Lang      string
 	PaymentID int
-	EntryFee  decimal.Decimal
 	PID       int
 }
 
