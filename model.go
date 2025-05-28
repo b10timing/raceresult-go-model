@@ -78,16 +78,17 @@ type CustomFieldType int
 
 // CustomFieldType constants
 const (
-	CustomFieldTypeText      CustomFieldType = 0
-	CustomFieldTypeDropDown  CustomFieldType = 1
-	CustomFieldTypeYesNo     CustomFieldType = 2
-	CustomFieldTypeInteger   CustomFieldType = 3
-	CustomFieldTypeDecimal   CustomFieldType = 4
-	CustomFieldTypeDate      CustomFieldType = 5
-	CustomFieldTypeCurrency  CustomFieldType = 6
-	CustomFieldTypeCountry   CustomFieldType = 7
-	CustomFieldTypeEmail     CustomFieldType = 8
-	CustomFieldTypeCellPhone CustomFieldType = 9
+	CustomFieldTypeText        CustomFieldType = 0
+	CustomFieldTypeDropDown    CustomFieldType = 1
+	CustomFieldTypeYesNo       CustomFieldType = 2
+	CustomFieldTypeInteger     CustomFieldType = 3
+	CustomFieldTypeDecimal     CustomFieldType = 4
+	CustomFieldTypeDate        CustomFieldType = 5
+	CustomFieldTypeCurrency    CustomFieldType = 6
+	CustomFieldTypeCountry     CustomFieldType = 7
+	CustomFieldTypeEmail       CustomFieldType = 8
+	CustomFieldTypeCellPhone   CustomFieldType = 9
+	CustomFieldTypeTransponder CustomFieldType = 10
 )
 
 // CustomField describes the internal go model
