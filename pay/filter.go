@@ -6,13 +6,15 @@ import (
 )
 
 type RegistrationFilter struct {
-	ID        []int
-	Event     []int
-	PID       []int
-	Month     []int
-	Year      []int
-	PaymentID []int
-	Search    string
+	ID           []int
+	Event        []int
+	PID          []int
+	Month        []int
+	Year         []int
+	PaymentID    []int
+	Search       string
+	MinTimestamp time.Time
+	MaxTimestamp time.Time
 }
 
 type PaymentFilter struct {
