@@ -120,6 +120,7 @@ type Payment struct {
 	IgnorePayment    bool
 	IgnoreReason     string
 	RequestID        int
+	EFDetailsBAK     string
 }
 
 type Contract struct {
@@ -143,9 +144,6 @@ type EventReceiver struct {
 	Email         string
 	VATRate       decimal.Decimal
 	SEPANotBefore time.Time
-	KickbackAbs   decimal.Decimal
-	KickbackPerc  decimal.Decimal
-	KickbackMode  int
 	ModJobID      int
 }
 
