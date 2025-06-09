@@ -132,6 +132,8 @@ type Contract struct {
 	SWIFT        string
 	Type         string
 	Language     string
+	KickbackAbs  decimal.Decimal
+	KickbackPerc decimal.Decimal
 	HasContract  bool `db:"length(Contract)>0"`
 }
 
