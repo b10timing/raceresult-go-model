@@ -120,7 +120,9 @@ type Payment struct {
 	IgnorePayment    bool
 	IgnoreReason     string
 	RequestID        int
-	EFDetailsBAK     string
+	KickbackInvID    int
+	//EFDetailsBAK     string
+	//PIDsBAK          string
 }
 
 type Contract struct {
