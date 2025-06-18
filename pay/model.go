@@ -88,39 +88,39 @@ type Registration struct {
 }
 
 type Payment struct {
-	ID               int
-	CustNo           int
-	Event            int
-	Method           int
-	Currency         string
-	Amount           decimal.Decimal
-	Fees             decimal.Decimal
-	UserFees         decimal.Decimal
-	Kickback         decimal.Decimal
-	ExchangeRate     float64
-	Created          time.Time
-	DebitDate        time.Time
-	ReceivedDate     time.Time
-	ReceivedAmount   decimal.Decimal
-	PayState         int
-	EventCurrency    string
-	AccountOwner     string
-	AccountNo        string
-	BranchNo         string
-	BankName         string
-	IBAN             string
-	BIC              string
-	DebitDescription string
-	Reference        string
-	Email            string
-	BillNo           int
-	RetryOf          int
-	Lang             string
-	Comment          string
-	IgnorePayment    bool
-	IgnoreReason     string
-	RequestID        int
-	KickbackInvID    int
+	ID           int
+	CustNo       int
+	Event        int
+	Method       int
+	Currency     string
+	Amount       decimal.Decimal
+	Fees         decimal.Decimal
+	UserFees     decimal.Decimal
+	Kickback     decimal.Decimal
+	ExchangeRate float64
+	Created      time.Time
+	//DebitDate        time.Time
+	ReceivedDate   time.Time
+	ReceivedAmount decimal.Decimal
+	PayState       int
+	EventCurrency  string
+	//AccountOwner     string
+	//AccountNo        string
+	//BranchNo         string
+	//BankName         string
+	//IBAN             string
+	//BIC              string
+	//DebitDescription string
+	Reference     string
+	Email         string
+	BillNo        int
+	RetryOf       int
+	Lang          string
+	Comment       string
+	IgnorePayment bool
+	IgnoreReason  string
+	RequestID     int
+	KickbackInvID int
 	//EFDetailsBAK     string
 	//PIDsBAK          string
 }
