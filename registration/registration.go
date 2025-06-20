@@ -26,6 +26,8 @@ type Registration struct {
 	OnlinePayment                              bool
 	OnlinePaymentButtonText                    string
 	PaymentMethods                             []PaymentMethod
+	OnlineRefund                               bool
+	RefundMethods                              []PaymentMethod
 	Confirmation                               Confirmation
 	AfterSave                                  []AfterSave
 	CSS                                        string
