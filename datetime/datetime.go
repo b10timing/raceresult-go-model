@@ -248,10 +248,12 @@ func Parse(str string) (DateTime, bool) {
 		if err == nil {
 			return DateTime{Time: d, hasZone: false}, true
 		}
-	case 20, 25:
-		d, err := time.Parse(time.RFC3339, str)
-		if err == nil {
-			return DateTime{Time: d, hasZone: true}, true
+	default:
+		if len(str) > 20 && str[10] == 'T' {
+			d, err := time.Parse(time.RFC3339Nano, str)
+			if err == nil {
+				return DateTime{Time: d, hasZone: true}, true
+			}
 		}
 	}
 	return ZeroDate(), false
