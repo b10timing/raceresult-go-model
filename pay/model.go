@@ -163,6 +163,7 @@ type Method struct {
 	Activated              bool
 	Refund                 bool
 	NoPayout               bool
+	BankAccountID          int
 	CaptureAmountAccountID int
 	CaptureFeeAccountID    int
 	NoTestMode             bool
@@ -181,10 +182,8 @@ type CreateRequest struct {
 	IP                 string
 	RegName            string
 	RegKey             string
-	Mode               string
 	TestMode           bool
 	ChangeID           int
-	ChangeKey          string
 	Amount             decimal.Decimal
 	Fees               decimal.Decimal
 	UserFees           decimal.Decimal
