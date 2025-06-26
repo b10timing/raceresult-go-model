@@ -165,7 +165,6 @@ type Method struct {
 	NoPayout               bool
 	BankAccountID          int
 	CaptureAmountAccountID int
-	CaptureFeeAccountID    int
 	NoTestMode             bool
 	Rounding               decimal.Decimal
 	DontShowFee            bool
