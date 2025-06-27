@@ -14,30 +14,31 @@ type Certificate struct {
 	PageFormat         PageFormat
 	PageHeight         int
 	PageWidth          int
-	SheetHeight        int
-	SheetWidth         int
-	MarginTop          int
-	MarginLeft         int
-	MarginRight        int
-	MarginBottom       int
-	CutLeft            int
-	CutTop             int
-	CutBottom          int
-	CutRight           int
-	DistanceVertical   int
-	DistanceHorizontal int
-	Holes              int
-	SpecialHoles       string
-	Substrate          string
-	RGBBlackToCMYK     bool
-	CMYKBlackValue     string
-	PrintNotes         string
-	Copies             int
-	PrintMode          string
-	Reverse            bool
-	RoundedCorners     bool
-	PlotterMarks       bool
-	BlockSize          int
+	SheetHeight        int    `json:",omitempty"`
+	SheetWidth         int    `json:",omitempty"`
+	MarginTop          int    `json:",omitempty"`
+	MarginLeft         int    `json:",omitempty"`
+	MarginRight        int    `json:",omitempty"`
+	MarginBottom       int    `json:",omitempty"`
+	CutLeft            int    `json:",omitempty"`
+	CutTop             int    `json:",omitempty"`
+	CutBottom          int    `json:",omitempty"`
+	CutRight           int    `json:",omitempty"`
+	DistanceVertical   int    `json:",omitempty"`
+	DistanceHorizontal int    `json:",omitempty"`
+	Holes              int    `json:",omitempty"`
+	SpecialHoles       string `json:",omitempty"`
+	Substrate          string `json:",omitempty"`
+	RGBBlackToCMYK     bool   `json:",omitempty"`
+	CMYKBlackValue     string `json:",omitempty"`
+	PrintNotes         string `json:",omitempty"`
+	Copies             int    `json:",omitempty"`
+	PrintMode          string `json:",omitempty"`
+	Reverse            bool   `json:",omitempty"`
+	RoundedCorners     bool   `json:",omitempty"`
+	PlotterMarks       bool   `json:",omitempty"`
+	Machine            int    `json:",omitempty"`
+	BlockSize          int    `json:",omitempty"`
 	Version            int
 	Elements           []Element `json:"Fields" xml:"Element"`
 }
