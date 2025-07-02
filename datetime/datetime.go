@@ -249,7 +249,7 @@ func Parse(str string) (DateTime, bool) {
 			return DateTime{Time: d, hasZone: false}, true
 		}
 	default:
-		if len(str) > 20 && str[10] == 'T' {
+		if len(str) >= 20 && str[10] == 'T' {
 			d, err := time.Parse(time.RFC3339Nano, str)
 			if err == nil {
 				return DateTime{Time: d, hasZone: true}, true
