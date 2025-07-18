@@ -147,6 +147,7 @@ type Method struct {
 	TransactionFee         decimal.Decimal
 	Disagio                decimal.Decimal
 	RegFee                 decimal.Decimal
+	RefundFee              decimal.Decimal
 	TransactionCosts       decimal.Decimal
 	DisagioCosts           decimal.Decimal
 	TransferDelay          int
