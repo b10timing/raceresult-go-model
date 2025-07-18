@@ -151,7 +151,6 @@ type Method struct {
 	DisagioCosts           decimal.Decimal
 	TransferDelay          int
 	Activated              bool
-	Refund                 bool
 	NoPayout               bool
 	BankAccountID          int
 	CaptureAmountAccountID int
