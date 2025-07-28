@@ -746,3 +746,74 @@ type RegistrationRequestResponse struct {
 	EntryFees    []EntryFeeItem
 	HasDuplicate bool
 }
+
+type InvoiceParty struct {
+	Company      string
+	Name         string
+	AddressLine1 string
+	AddressLine2 string
+	City         string
+	ZIP          string
+	State        string
+	Country      int
+}
+
+type Invoice struct {
+	ID              int
+	Number          string
+	Date            date.Date
+	ReceiverCompany string
+	Receiver        InvoiceParty
+	Sender          InvoiceParty
+}
+
+type InvoiceWithSum struct {
+	*Invoice
+	Sum decimal.Decimal
+}
+
+type InvoiceSourceItem struct {
+	ID           int
+	InvoiceID    int
+	PID          int
+	EntryFeeID   int
+	EntryFeeName string
+	Amount       decimal.Decimal
+	TaxRate      decimal.Decimal
+	Credit       bool
+}
+
+type InvoiceItem struct {
+	Count        int
+	EntryFeeID   int
+	EntryFeeName string
+	UnitPrice    decimal.Decimal
+	TaxRate      decimal.Decimal
+}
+
+type InvoiceWithDetails struct {
+	*Invoice
+	Sum         decimal.Decimal
+	Items       []*InvoiceItem
+	SourceItems []*InvoiceSourceItem
+}
+
+type InvoiceSettings struct {
+	NumberScheme              string
+	ReceiverFieldCompany      string
+	ReceiverFieldName         string
+	ReceiverFieldAddressLine1 string
+	ReceiverFieldAddressLine2 string
+	ReceiverFieldCity         string
+	ReceiverFieldZIP          string
+	ReceiverFieldState        string
+	ReceiverFieldCountry      string
+	SenderFieldCompany        string
+	SenderFieldName           string
+	SenderFieldAddressLine1   string
+	SenderFieldAddressLine2   string
+	SenderFieldCity           string
+	SenderFieldZIP            string
+	SenderFieldState          string
+	SenderFieldCountry        string
+}
