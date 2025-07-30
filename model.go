@@ -759,12 +759,11 @@ type InvoiceParty struct {
 }
 
 type Invoice struct {
-	ID              int
-	Number          string
-	Date            date.Date
-	ReceiverCompany string
-	Receiver        InvoiceParty
-	Sender          InvoiceParty
+	ID       int
+	Number   string
+	Date     date.Date
+	Receiver InvoiceParty
+	Sender   InvoiceParty
 }
 
 type InvoiceWithSum struct {
@@ -808,12 +807,12 @@ type InvoiceSettings struct {
 	ReceiverFieldZIP          string
 	ReceiverFieldState        string
 	ReceiverFieldCountry      string
-	SenderFieldCompany        string
-	SenderFieldName           string
-	SenderFieldAddressLine1   string
-	SenderFieldAddressLine2   string
-	SenderFieldCity           string
-	SenderFieldZIP            string
-	SenderFieldState          string
-	SenderFieldCountry        string
+	SenderCompany             string
+	SenderName                string
+	SenderAddressLine1        string
+	SenderAddressLine2        string
+	SenderCity                string
+	SenderZIP                 string
+	SenderState               string
+	SenderCountry             string
 }
