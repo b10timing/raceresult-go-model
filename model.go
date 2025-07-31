@@ -814,5 +814,5 @@ type InvoiceSettings struct {
 	SenderCity                string
 	SenderZIP                 string
 	SenderState               string
-	SenderCountry             string
+	SenderCountry             int
 }
