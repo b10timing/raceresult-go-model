@@ -764,6 +764,7 @@ type Invoice struct {
 	Date     date.Date
 	Receiver InvoiceParty
 	Sender   InvoiceParty
+	Sent     time.Time
 }
 
 type InvoiceWithSum struct {
