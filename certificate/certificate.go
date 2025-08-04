@@ -41,6 +41,7 @@ type Certificate struct {
 	BlockSize          int
 	Version            int
 	Elements           []Element `json:"Fields" xml:"Element"`
+	Zones              []Zone
 }
 
 // PageCount returns the number of pages the certificate has (max of Page attribute of all elements)
