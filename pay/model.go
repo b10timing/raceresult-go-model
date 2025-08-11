@@ -208,6 +208,6 @@ type FinishResult struct {
 }
 
 type CaptureResponse struct {
-	AddField     variant.VariantMap
+	AddFields    variant.VariantMap
 	PaymentTerms invoice.PaymentTerms
 }
