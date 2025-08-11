@@ -743,8 +743,12 @@ type RegistrationRequestRecord struct {
 }
 
 type RegistrationRequestResponse struct {
+	Records      []RegistrationRequestResponseRecord
+	PaymentTerms *invoice.PaymentTerms
+}
+
+type RegistrationRequestResponseRecord struct {
 	Expressions  variant.VariantMap
 	EntryFees    []EntryFeeItem
 	HasDuplicate bool
-	PaymentTerms *invoice.PaymentTerms
 }
