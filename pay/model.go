@@ -3,6 +3,7 @@ package pay
 import (
 	model "github.com/raceresult/go-model"
 	"github.com/raceresult/go-model/decimal"
+	"github.com/raceresult/go-model/invoice"
 	"github.com/raceresult/go-model/variant"
 	"time"
 )
@@ -204,4 +205,9 @@ type FinishResult struct {
 	PmID          int
 	Data          string
 	DataToken     string
+}
+
+type CaptureResponse struct {
+	AddField     map[string]interface{}
+	PaymentTerms invoice.PaymentTerms
 }

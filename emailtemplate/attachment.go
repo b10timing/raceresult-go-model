@@ -16,9 +16,10 @@ type Attachment struct {
 type AttachmentType int
 
 const (
-	AttachmentTypeFile        AttachmentType = 0
-	AttachmentTypeCertificate AttachmentType = 1
-	AttachmentTypeURL         AttachmentType = 2
+	AttachmentTypeFile          AttachmentType = 0
+	AttachmentTypeCertificate   AttachmentType = 1
+	AttachmentTypeURL           AttachmentType = 2
+	AttachmentTypeUnsentInvoice AttachmentType = 3
 )
 
 type AttachmentSendForType int

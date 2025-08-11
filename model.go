@@ -1,6 +1,7 @@
 package sesbase
 
 import (
+	"github.com/raceresult/go-model/invoice"
 	"time"
 
 	"github.com/raceresult/go-model/date"
@@ -745,75 +746,5 @@ type RegistrationRequestResponse struct {
 	Expressions  variant.VariantMap
 	EntryFees    []EntryFeeItem
 	HasDuplicate bool
-}
-
-type InvoiceParty struct {
-	Company      string
-	Name         string
-	AddressLine1 string
-	AddressLine2 string
-	City         string
-	ZIP          string
-	State        string
-	Country      int
-}
-
-type Invoice struct {
-	ID       int
-	Number   string
-	Date     date.Date
-	Receiver InvoiceParty
-	Sender   InvoiceParty
-	Sent     time.Time
-}
-
-type InvoiceWithSum struct {
-	*Invoice
-	Sum decimal.Decimal
-}
-
-type InvoiceSourceItem struct {
-	ID           int
-	InvoiceID    int
-	PID          int
-	EntryFeeID   int
-	EntryFeeName string
-	Amount       decimal.Decimal
-	TaxRate      decimal.Decimal
-	Credit       bool
-}
-
-type InvoiceItem struct {
-	Count        int
-	EntryFeeID   int
-	EntryFeeName string
-	UnitPrice    decimal.Decimal
-	TaxRate      decimal.Decimal
-}
-
-type InvoiceWithDetails struct {
-	*Invoice
-	Sum         decimal.Decimal
-	Items       []*InvoiceItem
-	SourceItems []*InvoiceSourceItem
-}
-
-type InvoiceSettings struct {
-	NumberScheme              string
-	ReceiverFieldCompany      string
-	ReceiverFieldName         string
-	ReceiverFieldAddressLine1 string
-	ReceiverFieldAddressLine2 string
-	ReceiverFieldCity         string
-	ReceiverFieldZIP          string
-	ReceiverFieldState        string
-	ReceiverFieldCountry      string
-	SenderCompany             string
-	SenderName                string
-	SenderAddressLine1        string
-	SenderAddressLine2        string
-	SenderCity                string
-	SenderZIP                 string
-	SenderState               string
-	SenderCountry             int
+	PaymentTerms *invoice.PaymentTerms
 }
