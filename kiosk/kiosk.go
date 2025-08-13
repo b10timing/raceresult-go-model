@@ -11,6 +11,7 @@ type Kiosk struct {
 	EnabledTo            datetime.DateTime
 	TransponderMode      int
 	AcceptedTransponders int
+	IgnoreBibRanges      bool
 	AutoFinish           bool
 	CSS                  string
 	Title                string
