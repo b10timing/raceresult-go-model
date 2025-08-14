@@ -94,7 +94,6 @@ type Payment struct {
 	Event         int
 	Method        int
 	Currency      string
-	Amount        decimal.Decimal
 	AmountNew     decimal.Decimal
 	Fees          decimal.Decimal
 	UserFees      decimal.Decimal
