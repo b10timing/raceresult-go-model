@@ -95,6 +95,7 @@ type Payment struct {
 	Method        int
 	Currency      string
 	Amount        decimal.Decimal
+	AmountNew     decimal.Decimal
 	Fees          decimal.Decimal
 	UserFees      decimal.Decimal
 	Kickback      decimal.Decimal
