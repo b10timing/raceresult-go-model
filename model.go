@@ -181,6 +181,21 @@ type ParticipantNewResponse struct {
 	Bib int
 }
 
+type ParticipantSearchResult struct {
+	Field     string
+	TotalHits string
+	Items     []ParticipantSearchResultItem
+}
+
+type ParticipantSearchResultItem struct {
+	ID               int
+	Bib              int
+	FirstName        string
+	LastName         string
+	ContestShortName string
+	FieldValue       variant.Variant
+}
+
 // EntryFee describes the internal go model
 type EntryFee struct {
 	ID              int
