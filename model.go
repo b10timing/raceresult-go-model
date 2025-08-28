@@ -181,18 +181,6 @@ type ParticipantNewResponse struct {
 	Bib int
 }
 
-type ParticipantSearchResult struct {
-	Field     string
-	TotalHits int
-	Items     []ParticipantSearchResultItem
-}
-
-type ParticipantSearchResultItem struct {
-	ID         int
-	FieldValue variant.Variant
-	Values     variant.VariantMap
-}
-
 // EntryFee describes the internal go model
 type EntryFee struct {
 	ID              int
