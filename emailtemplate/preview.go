@@ -13,6 +13,7 @@ type Preview struct {
 	Email       string              `json:",omitempty"`
 	Subject     string              `json:",omitempty"`
 	Text        string              `json:",omitempty"`
+	HTML        bool                `json:",omitempty"`
 	URL         string              `json:",omitempty"`
 	Method      string              `json:",omitempty"`
 	Attachments []PreviewAttachment `json:",omitempty"`
