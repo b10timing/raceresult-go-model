@@ -103,6 +103,7 @@ type Settings struct {
 	ReceiverFieldVATID        string
 	Issuer                    Party
 	PaymentTerms              PaymentTerms
+	ExcludedEntryFees         []int
 }
 
 type Filter struct {
