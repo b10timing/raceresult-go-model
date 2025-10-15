@@ -107,13 +107,10 @@ type Payment struct {
 	BillNo        int
 	RetryOf       int
 	Lang          string
-	Comment       string
 	IgnorePayment bool
 	IgnoreReason  string
 	RequestID     int
 	KickbackInvID int
-	//EFDetailsBAK     string
-	//PIDsBAK          string
 }
 
 type Contract struct {
